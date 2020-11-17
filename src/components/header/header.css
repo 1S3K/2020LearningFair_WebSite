@@ -1,0 +1,97 @@
+/* 
+[css unit]: 
+em, rem / 
+vw, vh, vmin, vmax / 
+% / 
+flex grid, flex box
+
+[flex]:
+container - display, flex-flow, justify-content
+items - order, flex, align-self
+
+[size]:
+header 너비 : 1920px
+header 높이 : 108px - 고정
+logo : (x1)306px x 78px
+logo left margin : 24px
+logo right margin : 27px
+
+[font]
+윤고딕 폰트 - 저작권 문제 생각
+noto sans kr 폰트 고려 
+*/
+
+/* web part */
+
+/* header-container */
+header {
+  float: left;
+
+  /* position*/
+  position: sticky; /* top에 고정 */
+  top: 0;
+
+  /* size */
+  width: 100vw;
+  height: 108px; /* 10vh */
+  background-color: #fff;
+
+  /* border */
+  border-image: linear-gradient(to right, #e1e857, #004483);
+  border-image-slice: 1;
+  border-bottom: solid 2px;
+
+  /* font */
+  font-size: 24px;
+  text-align: center;
+  line-height: 10vh;
+  color: #707070;
+
+  /* 항상 위에 z-index */
+  z-index: 1000;
+}
+
+.header-container {
+  /* flex */
+  display: flex;
+  justify-content: space-between; /* main-axis 정렬 */
+  align-items: center; /* 세로축 정렬 */
+}
+
+/* 
+header-container 
+skku ssen logo
+@x1 size 306px x 78px
+*/
+.header-logo {
+  /* 가변 패딩값 (로고 너비 306px기준) */
+  margin-left: 1.25%;
+  object-fit: fill;
+}
+
+/* 'OOO님 환영합니다' 메시지 출력 */
+/* font size - rem unit 사용 */
+.header-profile {
+  margin-right: 1.40625%;
+  font-size: 1.5em;
+}
+
+.header-profile .header-profile-name {
+  /* 고정값으로 간격을 줌 */
+  margin-right: 8px;
+
+  /* font style */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: right;
+  color: #154483;
+}
+
+.header-profile .header-profile-msg {
+  /* font style */
+  font-size: 1.5rem;
+  text-align: right;
+  color: #707070;
+}
+
+/* // web part */
