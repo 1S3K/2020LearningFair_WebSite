@@ -8,7 +8,7 @@ class ArticleProject extends Component {
   }
 
   handleLike = () => {
-    this.props.onLike(this.props.project);
+    this.props.onLike(this.props.item);
   }
 
   render() {
@@ -39,7 +39,7 @@ class ArticleProject extends Component {
           </div>
           <div className="project-like">
           {/* <img src="/images/unlike-button.png" alt=""/> */}
-            <button className="project-like-button" onClick={this.handleLike}><img src={ 1 ? 
+            <button className="project-like-button" onClick={this.handleLike}><img src={ isLike ? 
             "/images/like-button.png" : "/images/unlike-button.png"} alt=""/></button>
             
             <span className="project-like-count">{likeCount}</span>

@@ -49,18 +49,18 @@ class Article extends Component {
   }
 
   // 좋아요 이벤트
-  handleLike = project => {
-    const projects = [...this.state.projects];
-    const index = projects.indexOf(project);
+  handleLike = item => {
+    const data = [...this.state.data];
+    const index = data.indexOf(item);
 
-    projects[index].isLike = !projects[index].isLike; 
-    if (projects[index].isLike) {
-      projects[index].likeCount++;
+    data[index].isLike = !data[index].isLike; 
+    if (data[index].isLike) {
+      data[index].likeCount++;
     } else {
-      projects[index].likeCount--;
+      data[index].likeCount--;
     }
   
-    this.setState({projects});
+    this.setState({data});
   }
 
   render() {
