@@ -52,6 +52,7 @@ header {
 
 .header-container {
   /* flex */
+  width: 100%;
   display: flex;
   justify-content: space-between; /* main-axis 정렬 */
   align-items: center; /* 세로축 정렬 */

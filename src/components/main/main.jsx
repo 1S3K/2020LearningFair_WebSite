@@ -8,10 +8,14 @@ import Header from '../header/header';
 import Navbar from '../navbar/navbar';
 
 class Main extends Component {
+  state = {
+    isLogin: true,
+  }
+
   render() {
     return (
       <section className="main-page">
-        <Header />
+        <Header isLogin={this.state.isLogin} />
         <div className="middle-section">
 
           <Navbar />

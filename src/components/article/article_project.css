@@ -1,0 +1,142 @@
+input,
+button {
+  /* 모든 스타일 초기화 : 버튼 초기화 */
+  all: unset;
+}
+
+article {
+  /* top right bottom left */
+  margin: 84.5px 68px 20px 38px;
+}
+
+article .article-container {
+  display: flex;
+  height: 295px;
+
+  border: solid 1px #d8d8d8;
+}
+
+article .article-container .project-img {
+  background-color: lightgreen;
+  width: 34.587458746%;
+}
+
+article .article-container .project-info {
+  width: 46.072607261%;
+
+  border-right: solid 1px #d8d8d8;
+}
+
+/* 프로젝트 정보 타이틀 */
+article .article-container .project-info .project-title {
+  /* width: 15.511551155%; */
+  height: 37px;
+
+  margin-top: 20.5px;
+  margin-bottom: 18px;
+  margin-left: 29px;
+
+  font-size: 30px;
+  line-height: 1.33;
+  color: #707070;
+}
+
+/* 프로젝트 정보 내용 */
+article .article-container .project-info .project-contents {
+  height: 164px;
+  margin-left: 29px;
+  overflow-y: scroll;
+
+  font-size: 1.5rem;
+  color: #707070;
+}
+
+/* 프로젝트 좋아요 */
+article .article-container .project-info .project-like {
+  display: flex;
+  align-items: center;
+
+  margin-top: 10px;
+  margin-left: 28px;
+}
+
+article
+  .article-container
+  .project-info
+  .project-like
+  .project-like-button
+  img {
+  width: 33px;
+  height: 38px;
+}
+
+article .article-container .project-info .project-like .project-like-count {
+  margin-left: 10px;
+
+  font-size: 1.625rem;
+  color: #154483;
+}
+
+.group-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  width: 19.339933993%;
+}
+
+.group-info .group-info-container {
+  margin-left: 29px;
+
+  padding-top: 14.5px;
+  padding-bottom: 21px;
+}
+
+/* margin bottom 5 17 10 */
+
+.groupname-label {
+  margin-bottom: 5px;
+
+  color: #154483;
+  font-size: 1.375rem;
+  font-weight: bold;
+}
+.groupname {
+  margin-bottom: 17px;
+
+  color: #707070;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+.groupmember-label {
+  margin-bottom: 10px;
+
+  color: #154483;
+  font-size: 1.375rem;
+  font-weight: bold;
+}
+.groupmember {
+  overflow-y: scroll;
+
+  height: 111px;
+
+  color: #707070;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.group-info .show-video {
+  width: 100%;
+  height: 36px;
+  background-color: #154483;
+
+  font-size: 1.25rem;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.video-container {
+  width: 100%;
+  height: 800px;
+}

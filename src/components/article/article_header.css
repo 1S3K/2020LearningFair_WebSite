@@ -1,0 +1,65 @@
+/* 
+section-header 
+[width]
+1506px / 1920px (78.4375%)
+*/
+
+/* section header container */
+.section-header {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 64px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 78.4375%;
+}
+
+/* 분반 정보 ex. 인문사회캠퍼스 3분반 */
+.class-name {
+  /* size */
+  width: 23.4896vw;
+  height: 35px;
+
+  /* font */
+  /* font-size: 1.75rem; */
+  font-size: 1.4583vw;
+  font-weight: bold;
+  line-height: 1.43;
+  color: #154483;
+}
+
+/* 교수 정보 ex. 김재현 교수님 */
+.prof-name {
+  /* font */
+  /* font-size: 1.75rem; */
+  font-size: 1.4583vw;
+  line-height: 1.43;
+  color: #154483;
+}
+
+/* 오른쪽 정렬 위한 컨테이너 */
+.end-line-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 프로젝트 개수 ex. 총 48개의 작품이 있습니다 */
+.project-count {
+  width: 20.0521vw;
+  height: 42px;
+
+  /* font-size: 1.5rem; */
+  font-size: 1.25vw;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 42px;
+  letter-spacing: normal;
+  color: #707070;
+}
+
+/* 개수 부분 하이라이트 */
+.project-count strong {
+  color: #154483;
+}
