@@ -15,11 +15,11 @@
 }
 
 /* main banner */
-.main_banner_area {
+#section .main_banner_area {
   margin: 5vh auto;
 }
 
-.main_banner_img {
+#section .main_banner_img {
   height: 25vh;
 }
 /* // main banner */

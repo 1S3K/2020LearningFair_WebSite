@@ -3,19 +3,23 @@ import Footer from '../footer/footer';
 import Header from '../header/header';
 
 // css
-import './login.css' ;
+import './login.css';
 
 class Login extends Component {
+  state = {
+    isLogin: false,
+  }
+
   render() {
     return (
       <section className="login">
-        <Header />
+        <Header isLogin={this.state.isLogin}/>
 
         {/* login form */}
         <form id="section">
           {/* main banner area */}
           <div className="main_banner_area">
-            <img src="/images/main-banner.png" alt="성균SW교육원"/>
+            <img className="main_banner_img" src="/images/main-banner.png" alt="성균SW교육원"/>
           </div>
 
           {/* login area */}

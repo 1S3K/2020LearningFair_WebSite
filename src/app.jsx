@@ -1,6 +1,6 @@
 import React from 'react';
+import './reset.css';
 import './app.css';
-import './reset.css'
 
 
 import Login from './components/login/login';
