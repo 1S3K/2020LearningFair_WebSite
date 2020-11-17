@@ -1,0 +1,9 @@
+.contents-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.contents-page-middle {
+  display: flex;
+  padding-bottom: 80px;
+}
