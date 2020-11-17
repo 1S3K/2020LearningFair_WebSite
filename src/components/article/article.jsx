@@ -14,14 +14,20 @@ class Article extends Component {
 
   loadingData = async() => {
     try {
+
       const response = await axios.get(
         '/api/lectures/02/projects'
       );
 
-      console.log(response);
+      const fetchData = response.data.data;
+
+      fetchData.map((item, i)=>{
+        fetchData[i].isClicked = false;
+        fetchData[i].isLike = false;
+      })
 
       this.setState({
-        data: response.data.data,
+        data: fetchData,
       });
     } catch (e) {
       console.log(e);
@@ -33,13 +39,13 @@ class Article extends Component {
     loadingData();
   }
 
-  handleClick = project => {
-    const projects = [...this.state.projects];
-    const index = projects.indexOf(project);
+  handleClick = item => {
+    const data = [...this.state.data];
+    const index = data.indexOf(item);
 
-    projects[index].isClicked = !projects[index].isClicked;
+    data[index].isClicked = !data[index].isClicked;
   
-    this.setState({projects});
+    this.setState({data});
   }
 
   // 좋아요 이벤트
@@ -58,12 +64,10 @@ class Article extends Component {
   }
 
   render() {
-    const {data} = this.state;
-    
+    const selectedPart = this.props.data.selectedPart;
     return (
       <section className="article">
         <ArticleHeader 
-          // testCount={this.state.tests.length}
           dataCount={this.state.data.length}
         />
         
@@ -73,6 +77,7 @@ class Article extends Component {
           item={item} 
           onClick = {this.handleClick}
           onLike = {this.handleLike}
+          selectedPart = {selectedPart}
         />
         ))}
 

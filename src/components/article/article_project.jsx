@@ -1,11 +1,10 @@
-import React, { useState, Component } from 'react';
+import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
-import axios from 'axios';
 
 class ArticleProject extends Component {
 
   handleClick = () => {
-    this.props.onClick(this.props.project);
+    this.props.onClick(this.props.item);
   }
 
   handleLike = () => {
@@ -13,14 +12,12 @@ class ArticleProject extends Component {
   }
 
   render() {
-    const {id, title, lecture, group, groupName, members, description, likeCount, video} = this.props.item;
+    const {title, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
+    const selectedPart = this.props.selectedPart;
 
     return (
       
-      <article>
-        {/* script 여기에 넣어도 될까? */}
-        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.3.7/viewer.min.js"></script>
+      <article className="project-container">
 
       {/* 아티클 컨테이너 (비디오 제외) - 컴포넌트로 분리하기 */}
       <div className="article-container"> 
@@ -35,13 +32,10 @@ class ArticleProject extends Component {
         <div className="project-info">
           <div className="project-title">{title}</div>
           <div className="project-contents">
-            {/* 여기에 프로젝트 설명이 들어가는 부분 <br/>
-            여러줄 첨부 가능하도록 <br/><br/>
-            넘치면 생략할지 수직으로 스크롤 하게 할지는 <br/>
-            결정해야 할 부분! <br/>  */}
-            {/* {description} */}
-            {/* {JSON.stringify(data, null, 2)} */}
+            
             {description}
+            {/* {selectedPart} */}
+
           </div>
           <div className="project-like">
           {/* <img src="/images/unlike-button.png" alt=""/> */}
@@ -74,18 +68,17 @@ class ArticleProject extends Component {
       </div>
       {/* // 아티클 컨테이너 마무리 */}
 
-      <div className="video-container">
-        <ReactPlayer 
-          className="react-player" 
-          // url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
-          url={video}
-          width='100%'
-          height='100%'
-          style={{ display : (1 ? 'block' : 'none') }}
-          // playing
-          controls
-        />
-      </div>
+      {/* video part */}
+      <ReactPlayer 
+        className="react-player" 
+        // url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
+        url={video}
+        width='100%'
+        height='100%'
+        style={{ display : (isClicked ? 'block' : 'none') }}
+        // playing
+        controls
+      />
       
 
     </article>

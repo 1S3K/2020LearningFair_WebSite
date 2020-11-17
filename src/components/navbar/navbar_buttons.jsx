@@ -18,7 +18,7 @@ class NavbarButtons extends Component {
         <div className="dropdown-container" style={{ display : (isShow ? 'block' : 'none') }}>
           {/* <a href="#">· {parts}</a> */}
           {parts.map((parts, i) => (
-            <a href= {"/contents"} >· {parts}</a>
+            <a href= {"/contents"} parts={parts}>· {parts}</a>
           ))}
         </div>
       </>
