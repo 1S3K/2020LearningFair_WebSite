@@ -1,0 +1,46 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.middle-section {
+  display: flex;
+}
+
+.middle-section {
+  /* min-height: 90vh; */
+  padding-bottom: 80px;
+}
+
+.contents .main_banner_area {
+  width: 100%;
+}
+
+.contents .main_banner_area .main_banner_img {
+  margin: 5vh auto;
+}
+
+.contents .video_area_wrapper {
+  display: flex;
+  margin-bottom: ;
+}
+
+.congrat_video_area {
+  margin-right: 40px;
+}
+
+#congrat_video_area_title {
+  font-size: 3vh;
+  margin-top: 50px;
+}
+
+#congrat_video_area_subtitle {
+  font-size: 2vh;
+  font-weight: 500;
+  margin-top: 20px;
+  color: #154483;
+}
+#congrat_video_area_title strong {
+  font-weight: bold;
+  color: #154483;
+}

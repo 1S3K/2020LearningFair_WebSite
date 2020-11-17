@@ -1,11 +1,70 @@
 import React, { Component } from 'react';
+import ReactPlayer from 'react-player';
+
+import './main.css';
+
+import Footer from '../footer/footer';
+import Header from '../header/header';
+import Navbar from '../navbar/navbar';
 
 class Main extends Component {
   render() {
     return (
-      <div>
+      <section className="main-page">
+        <Header />
+        <div className="middle-section">
+
+          <Navbar />
+            <div className="contents">
+
+              {/* main banner */}
+              <div className="main_banner_area">
+                <img src="/images/main-banner.png" alt="성균SW교육원" className="main_banner_img"/>
+              </div>
+              {/* // main banner */}
+
+              {/* video contents X 2 */}
+              <div className="video_area_wrapper">
+
+                {/* video contents #1 */}
+                <div className="congrat_video_area">
+                  <div id="congrat_video_area_title">
+                    <strong> 축사 동영상 </strong>
+                  </div>
+                  <div id="congrat_video_area_subtitle">
+                    사범대학 김재현님
+                  </div>
+                  <ReactPlayer 
+                    className="react-player" 
+                    url='https://www.youtube.com/watch?v=7C2z4GqqS5E'
+                  />
+                </div>
+                {/* // video contents #1 */}
+
+                {/* video contents #2 */}
+                <div className="congrat_video_area">
+                  <div id="congrat_video_area_title">
+                    <strong style={{color: '#fff'}}> 축사 동영상 </strong>
+                  </div>
+                  <div id="congrat_video_area_subtitle">
+                    외부초청 홍길동님
+                  </div>
+                  <ReactPlayer 
+                    className="react-player" 
+                    url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
+                  />
+                </div>
+                {/* // video contents #2 */}
+              </div>
+              {/* // video contents X 2 */}
+
+              </div>
+
+        </div>
         
-      </div>
+
+        <Footer />
+      </section>
     );
   }
 }
