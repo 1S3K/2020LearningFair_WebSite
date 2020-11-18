@@ -13,12 +13,9 @@ class Main extends Component {
     isLogin: true,
   }
 
-  fetchUser = () => {
-    return sessionStorage.getItem("username")
-  };
 
   render() {
-    console.log(this.fetchUser())
+    // console.log(this.fetchUser())
     return (
 
       <section className="main-page">

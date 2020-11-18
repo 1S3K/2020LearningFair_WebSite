@@ -15,9 +15,9 @@ class Article extends Component {
   loadingData = async() => {
     try {
       const classId = this.props.classId;
-      console.log(classId.id);
+      // console.log(classId.id);
       const url = '/api/lectures/' + classId.id + '/projects'
-      console.log(url);
+      // console.log(url);
       const response = await axios.get(
         url, {validateStatus: false}
       );
@@ -75,6 +75,7 @@ class Article extends Component {
       <section className="article">
         <ArticleHeader 
           dataCount={this.state.data.length}
+          classId = {classId}
         />
         
         {this.state.data.map(item => (
@@ -84,7 +85,6 @@ class Article extends Component {
           onClick = {this.handleClick}
           onLike = {this.handleLike}
           classId = {classId}
-          
         />
         ))}
 
