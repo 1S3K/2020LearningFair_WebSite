@@ -40,7 +40,7 @@ class ArticleProject extends Component {
           <div className="project-like">
           {/* <img src="/images/unlike-button.png" alt=""/> */}
             <button className="project-like-button" onClick={this.handleLike}><img src={ isLike ? 
-            "/images/like-button.png" : "/images/unlike-button.png"} alt=""/></button>
+            "/images/like-button.png" : "/images/unlike-button@3x.png"} alt=""/></button>
             
             <span className="project-like-count">{likeCount}</span>
           </div>
@@ -69,16 +69,19 @@ class ArticleProject extends Component {
       {/* // 아티클 컨테이너 마무리 */}
 
       {/* video part */}
-      <ReactPlayer 
-        className="react-player" 
-        // url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
-        url={video}
-        width='100%'
-        height='100%'
-        style={{ display : (isClicked ? 'block' : 'none') }}
-        // playing
-        controls
-      />
+      <div className="video_area_wrapper">
+        <ReactPlayer 
+          className="react-player" 
+          // url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
+          url={video}
+          width='100%'
+          height='100%'
+          style={{ display : (isClicked ? 'block' : 'none') }}
+          // playing
+          controls
+        />
+      </div>  
+
       
 
     </article>

@@ -9,3 +9,13 @@
   display: flex;
   padding-bottom: 80px;
 }
+
+@media screen and (max-width: 1200px) {
+  .contents-page-middle {
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+  }
+}
