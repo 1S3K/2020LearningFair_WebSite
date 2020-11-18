@@ -19,6 +19,8 @@ class Article extends Component {
         '/api/lectures/02/projects'
       );
 
+      console.log(response);
+
       const fetchData = response.data.data;
 
       fetchData.map((item, i)=>{
