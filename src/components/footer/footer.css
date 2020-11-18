@@ -1,0 +1,64 @@
+/* footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+} */
+
+#footer_divider {
+  border: none;
+  width: 100%;
+  height: 2px;
+  margin: 0 0 8px;
+  background-image: linear-gradient(to bottom, #e1e857, #004483);
+}
+
+#footer_contents {
+  display: flex;
+  width: 100vw;
+  height: 10vh;
+  position: relative;
+}
+#info {
+  display: flex;
+  text-align: center;
+  margin: auto;
+}
+
+.footer-logo {
+  width: 270px;
+  height: 93px;
+}
+
+#school_info {
+  width: 80%;
+  height: 101px;
+  margin: 19px 0 0 14px;
+  font-size: 16px;
+  text-align: left;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  font-weight: 100;
+  letter-spacing: normal;
+  color: #7d7b7c;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-logo {
+    display: none;
+  }
+
+  #school_info {
+    width: 85%;
+    height: 101px;
+    margin: auto;
+    font-size: 12px;
+    text-align: center;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    font-weight: 100;
+    letter-spacing: normal;
+    color: #7d7b7c;
+  }
+}

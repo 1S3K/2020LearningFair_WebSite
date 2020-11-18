@@ -1,0 +1,19 @@
+section .article {
+  /* size */
+  width: 84.5332vw;
+  height: 100%;
+
+  /* margin/padding */
+  margin-bottom: 339.5px;
+}
+
+@media screen and (max-width: 1200px) {
+  section .article {
+    /* size */
+    width: 100vw;
+    /* height: 100%; */
+
+    /* margin/padding */
+    margin-bottom: 339.5px;
+  }
+}
