@@ -18,7 +18,6 @@
 
 .contents .video_area_wrapper {
   display: flex;
-  margin-bottom: ;
 }
 
 .congrat_video_area {
@@ -39,4 +38,47 @@
 #congrat_video_area_title strong {
   font-weight: bold;
   color: #154483;
+}
+
+.congrat_video_wrapper {
+  width: 30vw;
+  height: 20vw;
+}
+
+@media screen and (max-width: 1200px) {
+  .middle-section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+  }
+
+  .contents .main_banner_area .main_banner_img {
+    width: 100vw;
+
+    margin: 0;
+  }
+
+  .contents .video_area_wrapper {
+    /* display: flex; */
+    flex-direction: column;
+  }
+
+  .congrat_video_area {
+    margin-right: 0px;
+  }
+
+  #congrat_video_area_title,
+  #congrat_video_area_subtitle {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  #congrat_video_area_subtitle {
+    margin-top: 5px;
+  }
+
+  .congrat_video_wrapper {
+    width: 100vw;
+    height: 70vw;
+  }
 }

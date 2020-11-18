@@ -38,10 +38,14 @@ class Main extends Component {
                   <div id="congrat_video_area_subtitle">
                     사범대학 김재현님
                   </div>
-                  <ReactPlayer 
-                    className="react-player" 
-                    url='https://www.youtube.com/watch?v=7C2z4GqqS5E'
-                  />
+                  <div className="congrat_video_wrapper">
+                    <ReactPlayer 
+                      className="react-player" 
+                      width="100%"
+                      height="100%"
+                      url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
+                    />
+                  </div>
                 </div>
                 {/* // video contents #1 */}
 
@@ -53,10 +57,14 @@ class Main extends Component {
                   <div id="congrat_video_area_subtitle">
                     외부초청 홍길동님
                   </div>
-                  <ReactPlayer 
-                    className="react-player" 
-                    url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
-                  />
+                  <div className="congrat_video_wrapper">
+                    <ReactPlayer 
+                      className="react-player" 
+                      width="100%"
+                      height="100%"
+                      url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
+                    />
+                  </div>
                 </div>
                 {/* // video contents #2 */}
               </div>
@@ -64,7 +72,7 @@ class Main extends Component {
 
               </div>
 
-        </div>
+          </div>
         
 
         <Footer />
