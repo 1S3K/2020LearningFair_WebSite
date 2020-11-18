@@ -16,7 +16,7 @@ class Article extends Component {
     try {
 
       const response = await axios.get(
-        '/api/lectures/02/projects'
+        '/api/lectures/02/projects', {validateStatus: false}
       );
 
       console.log(response);

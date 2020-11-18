@@ -27,7 +27,9 @@ class Login extends Component {
 
   submitHandler = (e) => {
     e.preventDefault()
-    console.log(this.state);
+    // console.log(this.state);
+    
+    sessionStorage.setItem("username", this.state.name);
     axios.post('api/login', this.state).then(res => {
       console.log(res);
       console.log(this.props);
