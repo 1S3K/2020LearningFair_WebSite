@@ -90,7 +90,7 @@ class Login extends Component {
           {/* // login area */}
 
           <div className="login_button_area">
-          <button type="submit"><Link path='/main' style={{color: 'white', all: 'unset'}}>이동하기</Link></button>
+          <button type="submit"><Link to='/main' style={{color: 'white', all: 'unset'}}>이동하기</Link></button>
             
           </div>
         </form>
