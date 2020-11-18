@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
+
 import Footer from '../footer/footer';
 import Header from '../header/header';
 
@@ -28,13 +30,13 @@ class Login extends Component {
     console.log(this.state);
     axios.post('api/login', this.state).then(res => {
       console.log(res);
+      console.log(this.props);
     }).catch(err => {
       console.log(err);
     })
   }
 
   render() {
-    const {major, studentId, name, comment} = this.state;
     return (
       <section className="login">
         <Header isLogin={this.state.isLogin}/>
@@ -88,8 +90,8 @@ class Login extends Component {
           {/* // login area */}
 
           <div className="login_button_area">
-            {/* <button><Link to='/main' style={{color: '#fff', all: 'unset'}}>이동하기</Link></button> */}
-            <button>이동하기</button>
+          <button type="submit"><Link path='/main' style={{color: 'white', all: 'unset'}}>이동하기</Link></button>
+            
           </div>
         </form>
         {/* // #login section */}
