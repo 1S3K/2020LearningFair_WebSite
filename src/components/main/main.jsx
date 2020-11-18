@@ -6,14 +6,21 @@ import './main.css';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import Navbar from '../navbar/navbar';
+import { Redirect } from 'react-router-dom';
 
 class Main extends Component {
   state = {
     isLogin: true,
   }
 
+  fetchUser = () => {
+    return sessionStorage.getItem("username")
+  };
+
   render() {
+    console.log(this.fetchUser())
     return (
+
       <section className="main-page">
         <Header isLogin={this.state.isLogin} />
         <div className="middle-section">

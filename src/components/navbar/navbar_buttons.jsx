@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import {Link, Route} from 'react-router-dom'
 
 class NavbarButtons extends Component {
   handleClick = () => {
     this.props.onClick(this.props.campi);
   }
 
+
   render() {
-    const {name, isClicked, isShow, parts} = this.props.campi;
+    const {name, isClicked, isShow, parts, classNum} = this.props.campi;
+    // console.log(classNum);
     return (
       <>
         <button 
@@ -18,7 +21,7 @@ class NavbarButtons extends Component {
         <div className="dropdown-container" style={{ display : (isShow ? 'block' : 'none') }}>
           {/* <a href="#">· {parts}</a> */}
           {parts.map((parts, i) => (
-            <a href= {"/contents"} parts={parts}>· {parts}</a>
+            <a href={"/contents/" + classNum[i]}>· {parts}</a>
           ))}
         </div>
       </>

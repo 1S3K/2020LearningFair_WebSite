@@ -13,7 +13,6 @@ class ArticleProject extends Component {
 
   render() {
     const {title, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
-    const selectedPart = this.props.selectedPart;
 
     return (
       

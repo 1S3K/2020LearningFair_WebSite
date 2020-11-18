@@ -35,5 +35,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "3.35.126.154:8000"
+  "proxy": "http://3.35.126.154:8000"
 }

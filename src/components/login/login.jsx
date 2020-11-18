@@ -19,6 +19,9 @@ class Login extends Component {
       comment: '',
       major: '',
     }
+
+    // sessionStorage clear
+    // sessionStorage.clear() 
   }
 
   changeHandler = (e) => {
@@ -37,6 +40,7 @@ class Login extends Component {
       console.log(err);
     })
   }
+
 
   render() {
     return (
@@ -92,8 +96,11 @@ class Login extends Component {
           {/* // login area */}
 
           <div className="login_button_area">
-          <button type="submit"><Link to='/main' style={{color: 'white', all: 'unset'}}>이동하기</Link></button>
-            
+            <button type="submit">
+              <Link to='/main' style={{color: 'white', all: 'unset'}}>
+                이동하기
+              </Link>
+            </button>
           </div>
         </form>
         {/* // #login section */}

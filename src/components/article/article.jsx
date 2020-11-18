@@ -14,12 +14,15 @@ class Article extends Component {
 
   loadingData = async() => {
     try {
-
+      const classId = this.props.classId;
+      console.log(classId.id);
+      const url = '/api/lectures/' + classId.id + '/projects'
+      console.log(url);
       const response = await axios.get(
-        '/api/lectures/02/projects', {validateStatus: false}
+        url, {validateStatus: false}
       );
 
-      console.log(response);
+      // console.log(response);
 
       const fetchData = response.data.data;
 
@@ -66,7 +69,8 @@ class Article extends Component {
   }
 
   render() {
-    const selectedPart = this.props.data.selectedPart;
+    // const selectedPart = this.props.data.selectedPart;
+    const classId = this.props.classId;
     return (
       <section className="article">
         <ArticleHeader 
@@ -79,7 +83,8 @@ class Article extends Component {
           item={item} 
           onClick = {this.handleClick}
           onLike = {this.handleLike}
-          selectedPart = {selectedPart}
+          classId = {classId}
+          
         />
         ))}
 
