@@ -20,6 +20,7 @@
 }
 
 #section .main_banner_img {
+  /* width: 80vw; */
   height: 25vh;
 }
 /* // main banner */
@@ -126,7 +127,7 @@
   border: none;
   position: relative;
   height: 60px;
-  font-size: 1.6em;
+  font-size: 1.4em;
   padding: 0 2em;
   cursor: pointer;
   transition: 800ms ease all;
@@ -161,4 +162,30 @@
 .login_button_area button:hover:after {
   width: 100%;
   transition: 800ms ease all;
+}
+
+@media screen and (max-width: 768px) {
+  .login_area .container p {
+    font-size: 12px;
+  }
+
+  /* main banner */
+  #section .main_banner_area {
+    margin: 5vh auto;
+    margin-bottom: 30px;
+  }
+
+  #section .main_banner_img {
+    margin: auto;
+    width: 90vw;
+    height: 22vh;
+  }
+
+  .login_area .container {
+    margin: 25px 10%;
+  }
+
+  .login_button_area button {
+    height: 30px;
+  }
 }

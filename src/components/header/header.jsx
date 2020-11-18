@@ -9,8 +9,8 @@ class Header extends Component {
     const isLogin = this.props.isLogin;
     
     return (
-    <header style={{display: (isLogin ? '' : 'flex')}}>
-      <div className="header-container">
+    <header style={{display: (isLogin ? '' : 'flex')}} className="header-container">
+      {/* <div className="header-container"> */}
         <img src="/images/logo.png" alt="로고" className="header-logo"/>
         {
           isLogin && 
@@ -19,7 +19,7 @@ class Header extends Component {
             <span className="header-profile-msg">환영합니다.</span>
           </div>
         }
-      </div>
+      {/* </div> */}
     </header>
     );
   }

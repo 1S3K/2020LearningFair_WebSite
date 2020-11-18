@@ -42,3 +42,23 @@
   letter-spacing: normal;
   color: #7d7b7c;
 }
+
+@media screen and (max-width: 768px) {
+  .footer-logo {
+    display: none;
+  }
+
+  #school_info {
+    width: 85%;
+    height: 101px;
+    margin: auto;
+    font-size: 12px;
+    text-align: center;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    font-weight: 100;
+    letter-spacing: normal;
+    color: #7d7b7c;
+  }
+}

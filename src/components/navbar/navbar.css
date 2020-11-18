@@ -96,3 +96,9 @@
   float: right;
   padding-right: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .sidenav {
+    display: none;
+  }
+}

@@ -1,7 +1,8 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import './reset.css';
+import './components/header/header.css';
+
 
 import Login from './components/login/login';
 import Main from './components/main/main';

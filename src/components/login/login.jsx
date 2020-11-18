@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 
@@ -60,7 +59,7 @@ class Login extends Component {
 
       console.log(formData);
 
-      return post(url, formData, config);
+      return post(url, formData, config).then((res)=>{console.log(res)});
     } catch (err) {
       throw err;
     }
