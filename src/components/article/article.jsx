@@ -3,7 +3,6 @@ import axios from 'axios';
 import ArticleHeader from './article_header';
 import ArticleProject from './article_project';
 
-
 import './article.css';
 import './article_header.css';
 import './article_project.css';
@@ -22,6 +21,16 @@ class Article extends Component {
       const response = await axios.get(
         '/api/lectures/02/projects'
       );
+
+      const classId = this.props.classId;
+      // console.log(classId.id);
+      const url = '/api/lectures/' + classId.id + '/projects'
+      // console.log(url);
+      const response = await axios.get(
+        url, {validateStatus: false}
+      );
+
+      // console.log(response);
 
       const fetchData = response.data.data;
 
@@ -69,10 +78,14 @@ class Article extends Component {
 
   render() {
     const selectedPart = this.props.data.selectedPart;
+    // const selectedPart = this.props.data.selectedPart;
+    const classId = this.props.classId;
     return (
       <section className="article">
         <ArticleHeader 
           dataCount={this.state.data.length}
+
+          classId = {classId}
         />
         
         {this.state.data.map(item => (
@@ -82,6 +95,7 @@ class Article extends Component {
           onClick = {this.handleClick}
           onLike = {this.handleLike}
           selectedPart = {selectedPart}
+          classId = {classId}
         />
         ))}
 

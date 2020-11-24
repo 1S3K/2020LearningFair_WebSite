@@ -1,6 +1,7 @@
 import React, { Component,useState,Fragment } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { render } from 'react-dom';
+
 import ReactPlayer from 'react-player';
 import myPDF from './../../sample-pdf2.pdf';
 import Modal from 'react-modal';
@@ -8,6 +9,7 @@ import Modal from 'react-modal';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const url =  "/sample.pdf"
+
 const customStyles = {
   content : {
     top                   : '50%',
@@ -21,7 +23,6 @@ const customStyles = {
 };
 
 class ArticleProject extends Component {
-  
 
   state = {
     modalIsOpen: false,
@@ -84,12 +85,14 @@ class ArticleProject extends Component {
       <div>
 
 
+
         <Modal style = {customStyles} isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal}>
           <div className ="modal-Root-Screen">
 
                   <div className ="modal-PDF-area">
                     <Document
                     file={myPDF}
+
                       onLoadSuccess={this.onDocumentLoadSuccess}>
                       <Page scale = {scale} pageNumber={pageNumber} />
                     </Document>
@@ -133,7 +136,7 @@ class ArticleProject extends Component {
       </div>
 
 
- 
+
 
       {/* 아티클 컨테이너 (비디오 제외) - 컴포넌트로 분리하기 */}
       <div className="article-container"> 
@@ -141,7 +144,6 @@ class ArticleProject extends Component {
         {/* 프로젝트 이미지 */}        
         <img onClick={this.openModal} src="/images/test.jpg" alt="project-img" className="project-img"/>
 
-  
 
         {/* // 프로젝트 이미지 마무리 */}
 
@@ -157,7 +159,8 @@ class ArticleProject extends Component {
           <div className="project-like">
           {/* <img src="/images/unlike-button.png" alt=""/> */}
             <button className="project-like-button" onClick={this.handleLike}><img src={ isLike ? 
-            "/images/like-button.png" : "/images/unlike-button.png"} alt=""/></button>
+
+            "/images/like-button.png" : "/images/unlike-button@3x.png"} alt=""/></button>
             
             <span className="project-like-count">{likeCount}</span>
           </div>
@@ -186,18 +189,19 @@ class ArticleProject extends Component {
       {/* // 아티클 컨테이너 마무리 */}
 
       {/* video part */}
-      <ReactPlayer 
-        className="react-player" 
-        // url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
-        url={video}
-        width='100%'
-        height='100%'
-        style={{ display : (isClicked ? 'block' : 'none') }}
-        // playing
-        controls
-      />
-      
 
+      <div className="video_area_wrapper">
+        <ReactPlayer 
+          className="react-player" 
+          // url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
+          url={video}
+          width='100%'
+          height='100%'
+          style={{ display : (isClicked ? 'block' : 'none') }}
+          // playing
+          controls
+        />
+      </div>  
     </article>
     );
   }

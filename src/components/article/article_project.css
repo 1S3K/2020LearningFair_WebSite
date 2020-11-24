@@ -2,69 +2,66 @@ input,
 button {
   /* 모든 스타일 초기화 : 버튼 초기화 */
   all: unset;
+
+  cursor: pointer;
 }
 
-.modal-Root-Screen
-{
+.modal-Root-Screen {
   width: 75vh;
-  height : 75vh;
+  height: 75vh;
 }
 
-.modal-PDF-area
-{
-  height : 95%;
-  width : 100%;
-  border : 1px black solid;
+.modal-PDF-area {
+  height: 95%;
+  width: 100%;
+  border: 1px black solid;
   overflow-y: scroll;
-  overflow-x : scroll;
+  overflow-x: scroll;
 }
 
-.modal-button-area
-{
-  width : 100%;
-  height : 5%;
-  display:inline;
+.modal-button-area {
+  width: 100%;
+  height: 5%;
+  display: inline;
 }
 
-
-
-.modal-button
-{
-  background-color: #4CAF50; /* Green */
+.modal-button {
+  background-color: #4caf50; /* Green */
   border: none;
   color: white;
   padding: 15px 28px;
-  margin-right : 5px;
+  margin-right: 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
 }
-.modal-button-navi
-{
-  background-color: #4CAF50; /* Green */
+
+.modal-button-navi {
+  background-color: #4caf50; /* Green */
   border: none;
   color: white;
   padding: 15px 28px;
-  margin-right : 5px;
+  margin-right: 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin-left : 28%;
+
+  margin-left: 28%;
 }
 
-.page-index
-{
-  margin-left:20px;
+.page-index {
+  margin-left: 20px;
 }
 
 .project-container {
   /* top right bottom left */
-  margin: 84.5px 68px 0px 38px;
   /* margin-top: 84.5px;
   margin-left: 38px;
   margin-right: 68px; */
+
+  margin: 80px auto 60px;
 }
 
 article .article-container {
@@ -76,6 +73,11 @@ article .article-container {
 
 article .article-container .project-img {
   background-color: lightgreen;
+  width: 90%;
+  height: 295px;
+}
+
+article .article-container .project-img {
   width: 34.587458746%;
 }
 
@@ -83,6 +85,7 @@ article .article-container .project-info {
   width: 46.072607261%;
 
   border-right: solid 1px #d8d8d8;
+  border: solid 1px #d8d8d8;
 }
 
 /* 프로젝트 정보 타이틀 */
@@ -90,12 +93,14 @@ article .article-container .project-info .project-title {
   /* width: 15.511551155%; */
   height: 37px;
 
+
   margin-top: 20.5px;
   margin-bottom: 18px;
   margin-left: 29px;
 
   font-size: 30px;
   line-height: 1.33;
+
   color: #707070;
 }
 
@@ -103,6 +108,10 @@ article .article-container .project-info .project-title {
 article .article-container .project-info .project-contents {
   height: 164px;
   margin-left: 29px;
+
+  min-height: 164px;
+  margin-left: 29px;
+
   overflow-y: scroll;
 
   font-size: 1.5rem;
@@ -135,11 +144,14 @@ article .article-container .project-info .project-like .project-like-count {
   color: #154483;
 }
 
+
+/* 그룹 정보 */
 .group-info {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 
+  border: solid 1px #d8d8d8;
   width: 19.339933993%;
 }
 
@@ -192,4 +204,96 @@ article .article-container .project-info .project-like .project-like-count {
   text-align: center;
 
   color: #ffffff;
+}
+
+
+.project-container .video_area_wrapper {
+  width: 90%;
+}
+
+@media screen and (max-width: 1200px) {
+  article .article-container {
+    width: 100%;
+  }
+  .project-container .video_area_wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* 프로젝트 정보 타이틀 */
+  article .article-container .project-info {
+    text-align: center;
+    width: 35.412541254%;
+  }
+
+  article .article-container .project-info .project-title {
+    margin: 20px 0;
+    font-size: 17px;
+  }
+
+  /* 프로젝트 정보 내용 */
+  article .article-container .project-info .project-contents {
+    margin: 5px 0;
+    font-size: 15px;
+  }
+
+  /* 프로젝트 좋아요 */
+  article .article-container .project-info .project-like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 29px 0;
+  }
+
+  article
+    .article-container
+    .project-info
+    .project-like
+    .project-like-button
+    img {
+    width: 20px;
+    height: 25px;
+  }
+
+  article .article-container .project-info .project-like .project-like-count {
+    margin-left: 10px;
+
+    font-size: 15px;
+    color: #154483;
+  }
+
+  .group-info {
+    width: 30%;
+  }
+
+  .group-info .group-info-container {
+    margin-left: 0px;
+
+    padding-top: 14.5px;
+    padding-bottom: 21px;
+  }
+
+  .groupname-label,
+  .groupmember-label {
+    text-align: center;
+    font-size: 17px;
+  }
+  .groupname,
+  .groupmember {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .group-info .show-video {
+    width: 100%;
+    height: 100%;
+    background-color: #154483;
+
+    font-size: 13px;
+    text-align: center;
+
+    color: #ffffff;
+  }
 }

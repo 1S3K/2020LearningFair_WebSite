@@ -26,7 +26,9 @@ noto sans kr 폰트 고려
 /* header-container */
 .header-container {
   /* position*/
-  position: block; /* top에 고정 */
+
+  /* position: block; top에 고정 */
+  position: relative;
   top: 0;
 
   display: flex;
@@ -59,8 +61,13 @@ header-container
 skku ssen logo
 @x1 size 306px x 78px
 */
+
+  /* 가변 패딩값 (로고 너비 306px기준) */
+
+
 .header-logo {
   /* 가변 패딩값 (로고 너비 306px기준) */
+  margin-top: 25px;
   margin-left: 1.25vw;
   object-fit: fill;
 }

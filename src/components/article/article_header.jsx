@@ -6,10 +6,11 @@ class ArticleHeader extends Component {
     return (
       <div className="section-header">
         {/* 분반 정보 */}
-        <div className="class-name">인문사회캠퍼스 3분반</div>
+
+      <div className="class-name">인문사회캠퍼스 {this.props.classId.id}분반</div>
 
         {/* 교수 정보 */}
-        <div className="prof-name">김재현 교수님</div>
+        {/* <div className="prof-name">교수님</div> */}
 
         {/* 프로젝트 개수 정보 */}
         <div className="end-line-container">
