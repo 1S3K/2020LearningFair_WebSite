@@ -25,7 +25,6 @@ class Contents extends Component {
   }
 
   render() {
-    return (
 
 
     const {params} = this.props.match;

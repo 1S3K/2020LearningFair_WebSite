@@ -9,10 +9,11 @@ section-header
   display: flex;
   flex-direction: column;
 
+
   margin-top: 64px;
-  margin-left: auto;
+  margin-left: 40px;
   margin-right: auto;
-  width: 78.4375%;
+  width: 95%;
 }
 
 /* 분반 정보 ex. 인문사회캠퍼스 3분반 */
