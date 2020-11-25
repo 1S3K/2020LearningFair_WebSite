@@ -59,7 +59,7 @@ class ArticleProject extends Component {
   }
 
   handleLike = () => {
-    this.props.onLike(this.props.item);
+    this.props.onLike(this.props.item, this.props.index);
   }
 
 
@@ -69,11 +69,8 @@ class ArticleProject extends Component {
 
     const { pageNumber, numPages,scale } = this.state;
     const {title, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
-    const selectedPart = this.props.selectedPart;
-    // const [isOpen,setIsOpen] = useState(false);
 
     return (
-
 
 
 
