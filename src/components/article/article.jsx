@@ -86,7 +86,9 @@ class Article extends Component {
           classId = {classId}
         />
         
-        {this.state.data.map(item => (
+
+        <section className="project-area">
+          {this.state.data.map(item => (
         <ArticleProject 
           key={item.id} 
           item={item} 
@@ -96,7 +98,7 @@ class Article extends Component {
           classId = {classId}
         />
         ))}
-
+        </section>
       </section>
     );
   }
