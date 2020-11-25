@@ -5,191 +5,191 @@ button {
   cursor: pointer;
 }
 
+@media screen and (min-width: 769px) {
+  .modal-Root-Screen {
+    width: 75vh;
+    height: 75vh;
+  }
 
-@media screen and (min-width: 769px) 
-{
+  .modal-PDF-area {
+    height: 95%;
+    width: 100%;
+    border: 1px black solid;
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
 
+  .modal-button-area {
+    width: 100%;
+    height: 5%;
+    display: inline;
+  }
 
-.modal-Root-Screen {
-  width: 75vh;
-  height: 75vh;
-}
+  .modal-button {
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .modal-button-navi {
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 28%;
+  }
 
-.modal-PDF-area {
-  height: 95%;
-  width: 100%;
-  border: 1px black solid;
-  overflow-y: scroll;
-  overflow-x: scroll;
-}
+  .page-index {
+    margin-left: 20px;
+  }
 
-.modal-button-area {
-  width: 100%;
-  height: 5%;
-  display: inline;
-}
+  .project-container {
+    /* top right bottom left */
+    margin: 80px auto 60px;
+  }
 
-.modal-button {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 28px;
-  margin-right: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-.modal-button-navi {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 28px;
-  margin-right: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-left: 28%;
-}
+  article .article-container {
+    display: flex;
+    width: 80%;
+    height: 295px;
+  }
 
-.page-index {
-  margin-left: 20px;
-}
+  article .article-container .project-img {
+    width: 34.587458746%;
+  }
 
-.project-container {
-  /* top right bottom left */
-  margin: 80px auto 60px;
-}
+  article .article-container .project-info {
+    width: 46.072607261%;
 
-article .article-container {
-  display: flex;
-  width: 90%;
-  height: 295px;
-}
+    border: solid 1px #d8d8d8;
+  }
 
-article .article-container .project-img {
-  width: 34.587458746%;
-}
+  /* 프로젝트 정보 타이틀 */
+  article .article-container .project-info .project-title {
+    margin-top: 20.5px;
+    margin-bottom: 18px;
+    margin-left: 29px;
 
-article .article-container .project-info {
-  width: 46.072607261%;
+    font-size: 1.875em;
+    color: #707070;
+  }
 
-  border: solid 1px #d8d8d8;
-}
+  /* 프로젝트 정보 내용 */
+  article .article-container .project-info .project-contents {
+    min-height: 164px;
+    margin-left: 29px;
 
-/* 프로젝트 정보 타이틀 */
-article .article-container .project-info .project-title {
-  margin-top: 20.5px;
-  margin-bottom: 18px;
-  margin-left: 29px;
+    overflow-y: scroll;
 
-  font-size: 1.875em;
-  color: #707070;
-}
+    font-size: 1.5rem;
+    color: #707070;
+  }
 
-/* 프로젝트 정보 내용 */
-article .article-container .project-info .project-contents {
-  min-height: 164px;
-  margin-left: 29px;
+  /* 프로젝트 좋아요 */
+  article .article-container .project-info .project-like {
+    display: flex;
+    align-items: center;
 
-  overflow-y: scroll;
+    margin-top: 10px;
+    margin-left: 28px;
+  }
 
-  font-size: 1.5rem;
-  color: #707070;
-}
+  article
+    .article-container
+    .project-info
+    .project-like
+    .project-like-button
+    img {
+    width: 33px;
+    height: 38px;
+  }
 
-/* 프로젝트 좋아요 */
-article .article-container .project-info .project-like {
-  display: flex;
-  align-items: center;
+  article .article-container .project-info .project-like .project-like-count {
+    margin-left: 10px;
 
-  margin-top: 10px;
-  margin-left: 28px;
-}
+    font-size: 1.625rem;
+    color: #154483;
+  }
 
-article
-  .article-container
-  .project-info
-  .project-like
-  .project-like-button
-  img {
-  width: 33px;
-  height: 38px;
-}
+  /* 그룹 정보 */
+  .group-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid 1px #d8d8d8;
+    width: 19.339933993%;
+  }
 
-article .article-container .project-info .project-like .project-like-count {
-  margin-left: 10px;
+  .group-info .group-info-container {
+    margin-left: 29px;
 
-  font-size: 1.625rem;
-  color: #154483;
-}
+    padding-top: 14.5px;
+    padding-bottom: 21px;
+  }
 
-/* 그룹 정보 */
-.group-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border: solid 1px #d8d8d8;
-  width: 19.339933993%;
-}
+  /* margin bottom 5 17 10 */
 
-.group-info .group-info-container {
-  margin-left: 29px;
+  .groupname-label {
+    margin-bottom: 5px;
 
-  padding-top: 14.5px;
-  padding-bottom: 21px;
-}
+    color: #154483;
+    font-size: 1.375rem;
+    font-weight: bold;
+  }
+  .groupname {
+    margin-bottom: 17px;
 
-/* margin bottom 5 17 10 */
+    color: #707070;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+  .groupmember-label {
+    margin-bottom: 10px;
 
-.groupname-label {
-  margin-bottom: 5px;
+    color: #154483;
+    font-size: 1.375rem;
+    font-weight: bold;
+  }
+  .groupmember {
+    overflow-y: scroll;
 
-  color: #154483;
-  font-size: 1.375rem;
-  font-weight: bold;
-}
-.groupname {
-  margin-bottom: 17px;
+    height: 111px;
 
-  color: #707070;
-  font-size: 1.25rem;
-  line-height: 1.4;
-}
-.groupmember-label {
-  margin-bottom: 10px;
+    color: #707070;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
 
-  color: #154483;
-  font-size: 1.375rem;
-  font-weight: bold;
-}
-.groupmember {
-  overflow-y: scroll;
+  .group-info .show-video {
+    width: 100%;
+    height: 36px;
+    background-color: #154483;
 
-  height: 111px;
+    font-size: 1.25rem;
+    text-align: center;
 
-  color: #707070;
-  font-size: 1.25rem;
-  line-height: 1.4;
-}
+    color: #ffffff;
+  }
 
-.group-info .show-video {
-  width: 100%;
-  height: 36px;
-  background-color: #154483;
-
-  font-size: 1.25rem;
-  text-align: center;
-
-  color: #ffffff;
-}
-
-.project-container .video_area_wrapper {
-  width: 90%;
-}
+  .project-container .video_area_wrapper {
+    width: 80%;
+  }
 }
 @media screen and (max-width: 1200px) {
+  .project-container {
+    margin: 0 5%;
+  }
+
   article .article-container {
     width: 100%;
   }
@@ -198,19 +198,7 @@ article .article-container .project-info .project-like .project-like-count {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 768px) {
-
-
   /* 프로젝트 정보 타이틀 */
   article .article-container .project-info {
     text-align: center;
@@ -230,18 +218,12 @@ article .article-container .project-info .project-like .project-like-count {
     font-size: 15px;
   }
 
-
-  .project-img
-  {
+  .project-img {
     width: 100%;
   }
 
-
-
-
   article .article-container {
     display: block;
-   
 
     border: solid 1px #d8d8d8;
   }
@@ -265,10 +247,6 @@ article .article-container .project-info .project-like .project-like-count {
     height: 25px;
   }
 
-
-
-
-
   article .article-container .project-info .project-like .project-like-count {
     margin-left: 10px;
 
@@ -276,14 +254,7 @@ article .article-container .project-info .project-like .project-like-count {
     font-size: 20px;
     font-weight: 600;
     color: #154483;
-
-     
   }
-
- 
-
-
-
 
   .group-info {
     width: 100%;
@@ -309,7 +280,7 @@ article .article-container .project-info .project-like .project-like-count {
 
   .group-info .show-video {
     width: 100%;
-height : 40px;
+    height: 40px;
     background-color: #154483;
 
     font-size: 13px;
@@ -318,35 +289,19 @@ height : 40px;
     color: #ffffff;
   }
 
-
-
-
-  .article-container
-  {
-    margin-bottom : 50px;
+  .article-container {
+    margin-top: 50px;
   }
 
+  .article-container {
+    display: block;
+  }
 
+  .group-info {
+    border: 1px solid black;
+  }
 
-.article-container
-{
-  display: block;
-}
-
-
-.group-info
-{
-  border: 1px solid black;
-}
-
-.groupmember-label
-{
-  margin-top: 15px;
-}
-
-
-
-
-
-
+  .groupmember-label {
+    margin-top: 15px;
+  }
 }
