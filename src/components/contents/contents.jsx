@@ -25,15 +25,12 @@ class Contents extends Component {
   }
 
   render() {
-
-
     const {params} = this.props.match;
-    console.log(params);
     return (
       <section className="contents-page">
         <Header isLogin={this.state.isLogin} />
         <section className="contents-page-middle">
-          <Navbar />
+          <Navbar propsInfo={this.props}/>
           <Article data={this.state} classId={params}/>
         </section>
         <Footer />
