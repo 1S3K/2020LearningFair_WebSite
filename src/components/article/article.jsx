@@ -17,9 +17,6 @@ class Article extends Component {
 
   loadingData = async() => {
     try {
-
-
-
       const classId = this.props.classId;
       // console.log(classId.id);
       const url = '/api/lectures/' + classId.id + '/projects'
@@ -61,13 +58,17 @@ class Article extends Component {
 
   // 좋아요 이벤트
   handleLike = item => {
+    const classId = this.props.classId;
+    const url = '/api/lectures/' + classId.id + '/groups/' + classId.id + '/like'
     const data = [...this.state.data];
     const index = data.indexOf(item);
 
     data[index].isLike = !data[index].isLike; 
     if (data[index].isLike) {
+      axios.post(url).then(res => {console.log(res.data)});
       data[index].likeCount++;
     } else {
+      axios.delete(url).then(res => {console.log(res.data)});
       data[index].likeCount--;
     }
   

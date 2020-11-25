@@ -29,7 +29,7 @@ class Login extends Component {
     e.preventDefault()
 
     sessionStorage.setItem("username", this.state.name);
-    axios.post('api/login', this.state).then(res => {
+    axios.post('/api/login', this.state).then(res => {
       if (res.data.success)
       {
         console.log(res.data);
