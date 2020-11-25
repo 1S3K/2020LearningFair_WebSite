@@ -48,7 +48,7 @@ class Main extends Component {
                       className="react-player" 
                       width="100%"
                       height="100%"
-                      url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
+                      url='/videos/test.mp4' 
                     />
                   </div>
                 </div>
