@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-import {post} from 'axios';
-import {Link} from 'react-router-dom'
-
 import Footer from '../footer/footer';
 import Header from '../header/header';
 
@@ -22,9 +19,6 @@ class Login extends Component {
       comment: '',
       major: '',
     }
-
-    // sessionStorage clear
-    // sessionStorage.clear() 
   }
 
   changeHandler = (e) => {
@@ -33,15 +27,24 @@ class Login extends Component {
 
   submitHandler = (e) => {
     e.preventDefault()
-    // console.log(this.state);
-    
+
     sessionStorage.setItem("username", this.state.name);
     axios.post('api/login', this.state).then(res => {
-      console.log(res);
-      console.log(this.props);
+      if (res.data.success)
+      {
+        console.log(res.data);
+        console.log('login success');
+        this.props.history.push('/main');
+      }
+      else
+      {
+        console.log('login failed');
+      }
+      
     }).catch(err => {
       console.log(err);
     })
+
   }
 
 
@@ -105,10 +108,10 @@ class Login extends Component {
 
           <div className="login_button_area">
 
-            <button type="submit">
-              <Link to='/main' style={{color: 'white', all: 'unset'}}>
+            <button type="submit" >
+              {/* <Link to='/main' style={{color: 'white', all: 'unset'}}> */}
                 이동하기
-              </Link>
+              {/* </Link> */}
             </button>
           </div>
         </form>

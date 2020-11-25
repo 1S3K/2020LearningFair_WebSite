@@ -28,7 +28,7 @@ class Article extends Component {
         url, {validateStatus: false}
       );
 
-      // console.log(response);
+      console.log(response);
 
       const fetchData = response.data.data;
 
