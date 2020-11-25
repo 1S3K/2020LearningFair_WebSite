@@ -17,10 +17,9 @@ class Article extends Component {
 
   loadingData = async() => {
     try {
+      console.log(this.props);
       const classId = this.props.classId;
-      // console.log(classId.id);
       const url = '/api/lectures/' + classId.id + '/projects'
-      // console.log(url);
       const response = await axios.get(
         url, {validateStatus: false}
       );
@@ -57,9 +56,10 @@ class Article extends Component {
   }
 
   // 좋아요 이벤트
-  handleLike = item => {
+  handleLike = (item, groupNum) => {
     const classId = this.props.classId;
-    const url = '/api/lectures/' + classId.id + '/groups/' + classId.id + '/like'
+    const groundId = groupNum+1 < 10 && groupNum+1 >= 0 ? "0"+ (groupNum+1) : groupNum+1;
+    const url = '/api/lectures/' + classId.id + '/groups/' + groundId + '/like'
     const data = [...this.state.data];
     const index = data.indexOf(item);
 
@@ -77,17 +77,15 @@ class Article extends Component {
 
   render() {
     const selectedPart = this.props.data.selectedPart;
-    // const selectedPart = this.props.data.selectedPart;
     const classId = this.props.classId;
+    // console.log(this.state.data);
     return (
       <section className="article">
         <ArticleHeader 
           dataCount={this.state.data.length}
-
           classId = {classId}
         />
         
-
         <section className="project-area">
           {this.state.data.map(item => (
         <ArticleProject 
