@@ -17,7 +17,6 @@ class Article extends Component {
 
   loadingData = async() => {
     try {
-      console.log(this.props);
       const classId = this.props.classId;
       const url = '/api/lectures/' + classId.id + '/projects'
       const response = await axios.get(

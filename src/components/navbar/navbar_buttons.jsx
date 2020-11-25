@@ -11,7 +11,6 @@ class NavbarButtons extends Component {
 
   render() {
     const {name, isClicked, isShow, parts, classNum} = this.props.campi;
-    // console.log(classNum);
     return (
       <>
         <button 
@@ -21,7 +20,6 @@ class NavbarButtons extends Component {
           · {name}
         </button>
         <div className="dropdown-container" style={{ display : (isShow ? 'block' : 'none') }}>
-          {/* <a href="#">· {parts}</a> */}
           {parts.map((parts, i) => (
 
             <a href={"/contents/" + classNum[i]}>· {parts}</a>

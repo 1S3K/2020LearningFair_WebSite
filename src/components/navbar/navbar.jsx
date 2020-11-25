@@ -24,6 +24,7 @@ class Navbar extends Component {
   };
 
   handleClick = campus => {
+    console.log(campus);
     const campi = [...this.state.campi];
     const index = campi.indexOf(campus);
 
@@ -31,6 +32,11 @@ class Navbar extends Component {
     campi[index].isShow = !campi[index].isShow;
 
     this.setState({campi});
+
+    if(campus.id == 3)
+    {
+      this.props.propsInfo.history.push('/board');
+    }
   };
 
   render() {
