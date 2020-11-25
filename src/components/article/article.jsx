@@ -7,6 +7,9 @@ import './article.css';
 import './article_header.css';
 import './article_project.css';
 
+import { pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 class Article extends Component {
   state = {
     data: [],
@@ -14,6 +17,9 @@ class Article extends Component {
 
   loadingData = async() => {
     try {
+
+
+
       const classId = this.props.classId;
       // console.log(classId.id);
       const url = '/api/lectures/' + classId.id + '/projects'
@@ -22,7 +28,7 @@ class Article extends Component {
         url, {validateStatus: false}
       );
 
-      // console.log(response);
+      console.log(response);
 
       const fetchData = response.data.data;
 
@@ -69,12 +75,14 @@ class Article extends Component {
   }
 
   render() {
+    const selectedPart = this.props.data.selectedPart;
     // const selectedPart = this.props.data.selectedPart;
     const classId = this.props.classId;
     return (
       <section className="article">
         <ArticleHeader 
           dataCount={this.state.data.length}
+
           classId = {classId}
         />
         
@@ -84,6 +92,7 @@ class Article extends Component {
           item={item} 
           onClick = {this.handleClick}
           onLike = {this.handleLike}
+          selectedPart = {selectedPart}
           classId = {classId}
         />
         ))}

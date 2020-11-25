@@ -6,6 +6,7 @@ import './main.css';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import Navbar from '../navbar/navbar';
+
 import { Redirect } from 'react-router-dom';
 
 class Main extends Component {

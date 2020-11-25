@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component,useState,Fragment } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
+import { render } from 'react-dom';
+
 import ReactPlayer from 'react-player';
 import myPDF from './../../sample-pdf2.pdf';
 import Modal from 'react-modal';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+const url =  "/sample.pdf"
 
 const customStyles = {
   content : {
@@ -19,6 +23,7 @@ const customStyles = {
 };
 
 class ArticleProject extends Component {
+
   state = {
     modalIsOpen: false,
     secondModalIsOpen: false,
@@ -57,21 +62,37 @@ class ArticleProject extends Component {
     this.props.onLike(this.props.item);
   }
 
+
+
   render() {
+
+
     const { pageNumber, numPages,scale } = this.state;
-    const {title, groupName, members, pdf, description, likeCount, video, isClicked, isLike} = this.props.item;
-    console.log(pdf);
+    const {title, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
+    const selectedPart = this.props.selectedPart;
+    // const [isOpen,setIsOpen] = useState(false);
 
     return (
+
+
+
+
+
+      
       
       <article className="project-container">
+
       <div>
+
+
+
         <Modal style = {customStyles} isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal}>
           <div className ="modal-Root-Screen">
 
                   <div className ="modal-PDF-area">
                     <Document
-                      file={pdf}
+                    file={myPDF}
+
                       onLoadSuccess={this.onDocumentLoadSuccess}>
                       <Page scale = {scale} pageNumber={pageNumber} />
                     </Document>
@@ -102,11 +123,18 @@ class ArticleProject extends Component {
                     </button>
 
                     <span class = "page-index">{pageNumber} / {numPages}</span>
-                </div>          
+               
+
+                </div>
+                          
           </div>
-    
+     
+
         </Modal>
+
+
       </div>
+
 
 
 
@@ -115,7 +143,7 @@ class ArticleProject extends Component {
 
         {/* 프로젝트 이미지 */}        
         <img onClick={this.openModal} src="/images/test.jpg" alt="project-img" className="project-img"/>
-        
+
 
         {/* // 프로젝트 이미지 마무리 */}
 
@@ -131,6 +159,7 @@ class ArticleProject extends Component {
           <div className="project-like">
           {/* <img src="/images/unlike-button.png" alt=""/> */}
             <button className="project-like-button" onClick={this.handleLike}><img src={ isLike ? 
+
             "/images/like-button.png" : "/images/unlike-button@3x.png"} alt=""/></button>
             
             <span className="project-like-count">{likeCount}</span>
@@ -160,6 +189,7 @@ class ArticleProject extends Component {
       {/* // 아티클 컨테이너 마무리 */}
 
       {/* video part */}
+
       <div className="video_area_wrapper">
         <ReactPlayer 
           className="react-player" 

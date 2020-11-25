@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
 
 import Footer from '../footer/footer';
 import Header from '../header/header';
@@ -10,6 +9,7 @@ import axios from 'axios';
 import './login.css';
 
 class Login extends Component {
+
   constructor(props) {
     super(props)
 
@@ -19,9 +19,6 @@ class Login extends Component {
       comment: '',
       major: '',
     }
-
-    // sessionStorage clear
-    // sessionStorage.clear() 
   }
 
   changeHandler = (e) => {
@@ -30,15 +27,24 @@ class Login extends Component {
 
   submitHandler = (e) => {
     e.preventDefault()
-    // console.log(this.state);
-    
+
     sessionStorage.setItem("username", this.state.name);
     axios.post('api/login', this.state).then(res => {
-      console.log(res);
-      console.log(this.props);
+      if (res.data.success)
+      {
+        console.log(res.data);
+        console.log('login success');
+        this.props.history.push('/main');
+      }
+      else
+      {
+        console.log('login failed');
+      }
+      
     }).catch(err => {
       console.log(err);
     })
+
   }
 
 
@@ -48,6 +54,7 @@ class Login extends Component {
         <Header isLogin={this.state.isLogin}/>
 
         {/* login form */}
+
         <form id="section" onSubmit={this.submitHandler}>
           {/* main banner area */}
           <div className="main_banner_area">
@@ -60,6 +67,7 @@ class Login extends Component {
             {/* 학과 */}
             <div className="container">
               <div className="form-item">
+
                 <input type="text" id="example" name="major" value={this.state.major} onChange={this.changeHandler} required/>
                 <label htmlFor="example" data-label="학과"></label>
               </div>
@@ -69,6 +77,7 @@ class Login extends Component {
             {/* 학번 */}
             <div className="container">
               <div className="form-item">
+
                 <input type="text" id="example" name="studentId" value={this.state.studentId} onChange={this.changeHandler} required/>
                 <label htmlFor="example" data-label="학번"></label>
               </div>
@@ -78,6 +87,7 @@ class Login extends Component {
             {/* 이름 */}
             <div className="container">
               <div className="form-item">
+
                 <input type="text" id="example" name="name" value={this.state.name} onChange={this.changeHandler} required/>
                 <label htmlFor="example" data-label="이름"></label>
               </div>
@@ -87,6 +97,7 @@ class Login extends Component {
             {/* 방명록 */}
             <div className="container">
               <div className="form-item">
+
                 <input type="text" id="example" name="comment" value={this.state.comment} onChange={this.changeHandler} required/>
                 <label htmlFor="example" data-label="방명록"></label>
               </div>
@@ -96,10 +107,11 @@ class Login extends Component {
           {/* // login area */}
 
           <div className="login_button_area">
-            <button type="submit">
-              <Link to='/main' style={{color: 'white', all: 'unset'}}>
+
+            <button type="submit" >
+              {/* <Link to='/main' style={{color: 'white', all: 'unset'}}> */}
                 이동하기
-              </Link>
+              {/* </Link> */}
             </button>
           </div>
         </form>

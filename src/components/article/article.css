@@ -15,5 +15,7 @@ section .article {
 
     /* margin/padding */
     margin-bottom: 339.5px;
+
+    margin: 0 auto;
   }
 }

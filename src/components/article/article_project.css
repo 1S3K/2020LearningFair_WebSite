@@ -5,186 +5,191 @@ button {
   cursor: pointer;
 }
 
-.modal-Root-Screen {
-  width: 75vh;
-  height: 75vh;
+@media screen and (min-width: 769px) {
+  .modal-Root-Screen {
+    width: 75vh;
+    height: 75vh;
+  }
+
+  .modal-PDF-area {
+    height: 95%;
+    width: 100%;
+    border: 1px black solid;
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
+
+  .modal-button-area {
+    width: 100%;
+    height: 5%;
+    display: inline;
+  }
+
+  .modal-button {
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .modal-button-navi {
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 28px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 28%;
+  }
+
+  .page-index {
+    margin-left: 20px;
+  }
+
+  .project-container {
+    /* top right bottom left */
+    margin: 80px auto 60px;
+  }
+
+  article .article-container {
+    display: flex;
+    width: 80%;
+    height: 295px;
+  }
+
+  article .article-container .project-img {
+    width: 34.587458746%;
+  }
+
+  article .article-container .project-info {
+    width: 46.072607261%;
+
+    border: solid 1px #d8d8d8;
+  }
+
+  /* 프로젝트 정보 타이틀 */
+  article .article-container .project-info .project-title {
+    margin-top: 20.5px;
+    margin-bottom: 18px;
+    margin-left: 29px;
+
+    font-size: 1.875em;
+    color: #707070;
+  }
+
+  /* 프로젝트 정보 내용 */
+  article .article-container .project-info .project-contents {
+    min-height: 164px;
+    margin-left: 29px;
+
+    overflow-y: scroll;
+
+    font-size: 1.5rem;
+    color: #707070;
+  }
+
+  /* 프로젝트 좋아요 */
+  article .article-container .project-info .project-like {
+    display: flex;
+    align-items: center;
+
+    margin-top: 10px;
+    margin-left: 28px;
+  }
+
+  article
+    .article-container
+    .project-info
+    .project-like
+    .project-like-button
+    img {
+    width: 33px;
+    height: 38px;
+  }
+
+  article .article-container .project-info .project-like .project-like-count {
+    margin-left: 10px;
+
+    font-size: 1.625rem;
+    color: #154483;
+  }
+
+  /* 그룹 정보 */
+  .group-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid 1px #d8d8d8;
+    width: 19.339933993%;
+  }
+
+  .group-info .group-info-container {
+    margin-left: 29px;
+
+    padding-top: 14.5px;
+    padding-bottom: 21px;
+  }
+
+  /* margin bottom 5 17 10 */
+
+  .groupname-label {
+    margin-bottom: 5px;
+
+    color: #154483;
+    font-size: 1.375rem;
+    font-weight: bold;
+  }
+  .groupname {
+    margin-bottom: 17px;
+
+    color: #707070;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+  .groupmember-label {
+    margin-bottom: 10px;
+
+    color: #154483;
+    font-size: 1.375rem;
+    font-weight: bold;
+  }
+  .groupmember {
+    overflow-y: scroll;
+
+    height: 111px;
+
+    color: #707070;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .group-info .show-video {
+    width: 100%;
+    height: 36px;
+    background-color: #154483;
+
+    font-size: 1.25rem;
+    text-align: center;
+
+    color: #ffffff;
+  }
+
+  .project-container .video_area_wrapper {
+    width: 80%;
+  }
 }
-
-.modal-PDF-area {
-  height: 95%;
-  width: 100%;
-  border: 1px black solid;
-  overflow-y: scroll;
-  overflow-x: scroll;
-}
-
-.modal-button-area {
-  width: 100%;
-  height: 5%;
-  display: inline;
-}
-
-.modal-button {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 28px;
-  margin-right: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-.modal-button-navi {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 28px;
-  margin-right: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-left: 28%;
-}
-
-.page-index {
-  margin-left: 20px;
-}
-
-.project-container {
-  /* top right bottom left */
-  margin: 80px auto 60px;
-}
-
-article .article-container {
-  display: flex;
-  width: 90%;
-  height: 295px;
-}
-
-article .article-container .project-img {
-  width: 34.587458746%;
-}
-
-article .article-container .project-info {
-  width: 46.072607261%;
-
-  border: solid 1px #d8d8d8;
-}
-
-/* 프로젝트 정보 타이틀 */
-article .article-container .project-info .project-title {
-  margin-top: 20.5px;
-  margin-bottom: 18px;
-  margin-left: 29px;
-
-  font-size: 1.875em;
-  color: #707070;
-}
-
-/* 프로젝트 정보 내용 */
-article .article-container .project-info .project-contents {
-  min-height: 164px;
-  margin-left: 29px;
-
-  overflow-y: scroll;
-
-  font-size: 1.5rem;
-  color: #707070;
-}
-
-/* 프로젝트 좋아요 */
-article .article-container .project-info .project-like {
-  display: flex;
-  align-items: center;
-
-  margin-top: 10px;
-  margin-left: 28px;
-}
-
-article
-  .article-container
-  .project-info
-  .project-like
-  .project-like-button
-  img {
-  width: 33px;
-  height: 38px;
-}
-
-article .article-container .project-info .project-like .project-like-count {
-  margin-left: 10px;
-
-  font-size: 1.625rem;
-  color: #154483;
-}
-
-/* 그룹 정보 */
-.group-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border: solid 1px #d8d8d8;
-  width: 19.339933993%;
-}
-
-.group-info .group-info-container {
-  margin-left: 29px;
-
-  padding-top: 14.5px;
-  padding-bottom: 21px;
-}
-
-/* margin bottom 5 17 10 */
-
-.groupname-label {
-  margin-bottom: 5px;
-
-  color: #154483;
-  font-size: 1.375rem;
-  font-weight: bold;
-}
-.groupname {
-  margin-bottom: 17px;
-
-  color: #707070;
-  font-size: 1.25rem;
-  line-height: 1.4;
-}
-.groupmember-label {
-  margin-bottom: 10px;
-
-  color: #154483;
-  font-size: 1.375rem;
-  font-weight: bold;
-}
-.groupmember {
-  overflow-y: scroll;
-
-  height: 111px;
-
-  color: #707070;
-  font-size: 1.25rem;
-  line-height: 1.4;
-}
-
-.group-info .show-video {
-  width: 100%;
-  height: 36px;
-  background-color: #154483;
-
-  font-size: 1.25rem;
-  text-align: center;
-
-  color: #ffffff;
-}
-
-.project-container .video_area_wrapper {
-  width: 90%;
-}
-
 @media screen and (max-width: 1200px) {
+  .project-container {
+    margin: 0 5%;
+  }
+
   article .article-container {
     width: 100%;
   }
@@ -197,27 +202,39 @@ article .article-container .project-info .project-like .project-like-count {
   /* 프로젝트 정보 타이틀 */
   article .article-container .project-info {
     text-align: center;
-    width: 35.412541254%;
+    width: 100%;
   }
 
   article .article-container .project-info .project-title {
-    margin: 20px 0;
-    font-size: 17px;
+    text-align: center;
+    margin: 5px 0;
+    font-size: 22px;
   }
 
   /* 프로젝트 정보 내용 */
   article .article-container .project-info .project-contents {
+    text-align: center;
     margin: 5px 0;
     font-size: 15px;
   }
 
+  .project-img {
+    width: 100%;
+  }
+
+  article .article-container {
+    display: block;
+
+    border: solid 1px #d8d8d8;
+  }
+
   /* 프로젝트 좋아요 */
   article .article-container .project-info .project-like {
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
 
-    margin: 29px 0;
+    margin: 10px 0;
   }
 
   article
@@ -233,12 +250,14 @@ article .article-container .project-info .project-like .project-like-count {
   article .article-container .project-info .project-like .project-like-count {
     margin-left: 10px;
 
-    font-size: 15px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
     color: #154483;
   }
 
   .group-info {
-    width: 30%;
+    width: 100%;
   }
 
   .group-info .group-info-container {
@@ -261,12 +280,28 @@ article .article-container .project-info .project-like .project-like-count {
 
   .group-info .show-video {
     width: 100%;
-    height: 100%;
+    height: 40px;
     background-color: #154483;
 
     font-size: 13px;
     text-align: center;
 
     color: #ffffff;
+  }
+
+  .article-container {
+    margin-top: 50px;
+  }
+
+  .article-container {
+    display: block;
+  }
+
+  .group-info {
+    border: 1px solid black;
+  }
+
+  .groupmember-label {
+    margin-top: 15px;
   }
 }
