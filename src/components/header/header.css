@@ -98,12 +98,40 @@ skku ssen logo
 }
 
 @media screen and (max-width: 768px) {
+
+  .header-container{
+    height : 10vh;
+  }
+
   .header-logo {
+    position: relative;
+    top : 10px;
     width: 60vw;
     margin: 5px auto;
+    margin-right: auto;
+    margin-left : 20vw;
+    padding-top:10px;
   }
 
   .header-profile {
     display: none;
   }
+
+
 }
+@media screen and (min-width: 769px) {
+
+  .header-container{
+    height : 10vh;
+  }
+  .header-logo {
+    position: relative;
+    top : 5px;
+
+  }
+
+
+
+
+}
+

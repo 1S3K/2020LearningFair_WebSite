@@ -11,7 +11,7 @@ section-header
 
 
   margin-top: 64px;
-  margin-left: 40px;
+  margin-left: 0;
   margin-right: auto;
   width: 95%;
 }
@@ -103,3 +103,5 @@ section-header
     color: #707070;
   }
 }
+
+

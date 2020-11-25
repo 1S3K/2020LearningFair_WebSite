@@ -98,11 +98,11 @@ class ArticleProject extends Component {
 
                 <div className = "modal-button-area">
                     <button className ="modal-button" onClick={() => this.setState({scale : this.state.scale = this.state.scale + 0.05})}>
-                        확대하기
+                        +
                       </button>
 
                       <button className ="modal-button" onClick={() => this.setState({scale : this.state.scale = this.state.scale - 0.05})}>
-                        축소하기
+                        -
                       </button>
 
 
@@ -110,13 +110,13 @@ class ArticleProject extends Component {
                         <button className ="modal-button-navi" onClick={() => this.state.pageNumber > 1 ?
                           this.setState({numPages : this.state.numPages,
                             pageNumber : this.state.pageNumber-1}) : null}>
-                        이전장
+                        ⇽
                       </button>
 
                       <button className ="modal-button" onClick={() => this.state.pageNumber < numPages ?
                           this.setState({numPages : this.state.numPages,
                             pageNumber : this.state.pageNumber+1}) : null}>
-                          다음장
+                          ⇾
                     </button>
 
                     <span class = "page-index">{pageNumber} / {numPages}</span>
@@ -169,12 +169,18 @@ class ArticleProject extends Component {
 
           {/* 그룹 정보 컨테이너 */}
           <div className="group-info-container">
-            <div className="groupname-label">팀명</div>
-            <div className="groupname">{groupName}</div>
-            <div className="groupmember-label">팀원</div>
-            <div className="groupmember">
-              {members}
+            <div className="teamname-area">
+              <div className="groupname-label">팀명</div>
+              <div className="groupname">{groupName}</div>
             </div>
+            <div className="teammember-area">
+              <div className="groupmember-label">팀원</div>
+              <div className="groupmember">
+                {members}
+              </div>
+            </div>
+
+
           </div>
 
           {/* 동영상 버튼  */}
