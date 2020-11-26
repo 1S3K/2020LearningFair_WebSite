@@ -23,6 +23,10 @@ class Navbar extends Component {
     ],
   };
 
+  componentDidMount() {
+    
+  }
+
   handleClick = campus => {
     console.log(campus);
     const campi = [...this.state.campi];
@@ -40,8 +44,34 @@ class Navbar extends Component {
   };
 
   render() {
+    // console.log(this.props);
+    const menuClicked = this.props.menuClicked;
+    const mql = window.matchMedia("screen and (max-width: 768px)");
+
+    console.log(mql.matches);    
+    console.log(menuClicked);
+
+    let displayState='block';
+    if (mql.matches)
+    {
+      if (menuClicked) {
+        displayState = 'block';
+      }
+      else {
+        displayState = 'none';
+      }
+    }
+    else if(!mql.matches)
+    {
+      displayState='block';
+    }
+
+    console.log(displayState);
+
+    
     return (
-      <nav className = "sidenav">
+      
+      <nav className = "sidenav" style={{display: displayState}}>
         {this.state.campi.map(campi => (
         <NavbarButtons key={campi.id} campi={campi} onClick={this.handleClick}/>
         ))}
