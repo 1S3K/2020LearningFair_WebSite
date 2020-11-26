@@ -217,11 +217,13 @@ button {
     color: #ffffff;
   }
 
+
   .project-container .video_area_wrapper {
     width: 100%;
     height: 50%;
     /* position: absolute; */
   }
+
 }
 /* @media screen and (max-width: 1200px) {
   .project-container .video_area_wrapper {
@@ -240,6 +242,11 @@ button {
     width: 100%;
   }
 } */
+
+
+
+
+
 
 @media screen and (max-width: 768px) {
   /* PDF 부분 */
