@@ -57,8 +57,8 @@ class Article extends Component {
   // 좋아요 이벤트
   handleLike = (item, groupNum) => {
     const classId = this.props.classId;
-    const groundId = groupNum+1 < 10 && groupNum+1 >= 0 ? "0"+ (groupNum+1) : groupNum+1;
-    const url = '/api/lectures/' + classId.id + '/groups/' + groundId + '/like'
+    const groupId = groupNum+1 < 10 && groupNum+1 >= 0 ? "0"+ (groupNum+1) : groupNum+1;
+    const url = '/api/lectures/' + classId.id + '/groups/' + groupId + '/like'
     const data = [...this.state.data];
     const index = data.indexOf(item);
 
@@ -70,14 +70,12 @@ class Article extends Component {
       axios.delete(url).then(res => {console.log(res.data)});
       data[index].likeCount--;
     }
-  
     this.setState({data});
   }
 
   render() {
     const selectedPart = this.props.data.selectedPart;
     const classId = this.props.classId;
-    // console.log(this.state.data);
     return (
       <section className="article">
         <ArticleHeader 
@@ -86,7 +84,7 @@ class Article extends Component {
         />
         
         <section className="project-area">
-          {this.state.data.map(item => (
+          {this.state.data.map((item, index) => (
         <ArticleProject 
           key={item.id} 
           item={item} 
@@ -94,6 +92,7 @@ class Article extends Component {
           onLike = {this.handleLike}
           selectedPart = {selectedPart}
           classId = {classId}
+          index = {index}
         />
         ))}
         </section>
