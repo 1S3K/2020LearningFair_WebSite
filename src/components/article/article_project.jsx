@@ -9,6 +9,8 @@ import Modal from 'react-modal';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const url =  "/sample.pdf"
+const pdfUrl = "http://www.africau.edu/images/default/sample.pdf"
+var array = new Uint8Array(pdfUrl);
 
 const customStyles = {
   content : {
@@ -89,6 +91,7 @@ class ArticleProject extends Component {
                   <div className ="modal-PDF-area">
                     <Document
                     file={myPDF}
+                    // file = {{ url: 'http://www.africau.edu/images/default/sample.pdf', httpHeaders: { 'X-CustomHeader': '40359820958024350238508234' }, withCredentials: true }}
 
                       onLoadSuccess={this.onDocumentLoadSuccess}>
                       <Page scale = {scale} pageNumber={pageNumber} />
