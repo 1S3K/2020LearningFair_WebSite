@@ -12,17 +12,24 @@ import { Redirect } from 'react-router-dom';
 class Main extends Component {
   state = {
     isLogin: true,
+    menuClicked : false,
   }
 
+  handleMenu = menuState => {
+    const state = this.state;
+    state.menuClicked = !menuState;
+    console.log(state);
+    this.setState({isLogin: state.isLogin, menuClicked: state.menuClicked}); 
+  }
 
   render() {
+    // console.log(this.state.menuClicked);
     return (
-
       <section className="main-page">
-        <Header isLogin={this.state.isLogin} />
+        <Header isLogin={this.state.isLogin} menuClicked={this.state.menuClicked} onMenu={this.handleMenu}/>
         <div className="middle-section">
 
-          <Navbar propsInfo={this.props}/>
+          <Navbar propsInfo={this.props} menuClicked={this.state.menuClicked}/>
             <div className="contents">
 
               {/* main banner */}

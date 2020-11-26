@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import {BrowserRouter, Link, Router, Route, Switch} from 'react-router-dom';
 
@@ -9,23 +9,35 @@ import Login from './components/login/login';
 import Main from './components/main/main';
 import Contents from './components/contents/contents';
 import Board from './components/board/board';
+import { toPlainObject } from 'lodash';
 
-function App() {
+class App extends Component {
+  // state = {
+  //   menuClicked : false,
+  // };
 
-  
-  return (
-    <BrowserRouter>
-      
-        <Route exact path='/' component={Login} />
+  // handleMenu() {
+  //   console.log(this.state.menuClicked);
+  //   const menuClicked = this.state.menuClicked;
+  //   menuClicked = !menuClicked;
+  //   this.setState({menuClicked}); 
+  // }
 
-        <Route exact path='/main' component={Main} />
-  
-        <Route path='/contents/:id' exact component={Contents} />
+  render() {
+    // console.log(this.state.menuClicked);
+    return (
+      <BrowserRouter>
+        
+          <Route exact path='/' component={Login} />
 
-        <Route path='/board' exact component={Board} />
+          <Route exact path='/main' component={Main} />
+    
+          <Route path='/contents/:id' exact component={Contents} />
 
-    </BrowserRouter>
-  )
+          <Route path='/board' exact component={Board} />
+
+      </BrowserRouter>
+    )
+  }
 }
-
 export default App;
