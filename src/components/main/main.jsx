@@ -16,14 +16,13 @@ class Main extends Component {
 
 
   render() {
-    // console.log(this.fetchUser())
     return (
 
       <section className="main-page">
         <Header isLogin={this.state.isLogin} />
         <div className="middle-section">
 
-          <Navbar />
+          <Navbar propsInfo={this.props}/>
             <div className="contents">
 
               {/* main banner */}
@@ -41,7 +40,7 @@ class Main extends Component {
                     <strong> 축사 동영상 </strong>
                   </div>
                   <div id="congrat_video_area_subtitle">
-                    사범대학 김재현님
+                    성균SW교육원 김재현 원장님
                   </div>
                   <div className="congrat_video_wrapper">
                     <ReactPlayer 
