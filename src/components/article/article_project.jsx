@@ -139,64 +139,81 @@ class ArticleProject extends Component {
 
 
       {/* 아티클 컨테이너 (비디오 제외) - 컴포넌트로 분리하기 */}
-      <div className="article-container"> 
+      {
+        !isClicked && 
+          <>
+          <div className="article-container"> 
 
-        {/* 프로젝트 이미지 */}        
-        <img onClick={this.openModal} src="/images/test.jpg" alt="project-img" className="project-img"/>
-
-
-        {/* // 프로젝트 이미지 마무리 */}
-
-        {/* 프로젝트 정보 */}
-        <div className="project-info">
-          <div className="project-title">{title}</div>
-          <div className="project-contents">
-            
-            {description}
-            {/* {selectedPart} */}
-
-          </div>
-          <div className="project-like">
-          {/* <img src="/images/unlike-button.png" alt=""/> */}
-            <button className="project-like-button" onClick={this.handleLike}><img src={ isLike ? 
-
-            "/images/like-button.png" : "/images/unlike-button@3x.png"} alt=""/></button>
-            
-            <span className="project-like-count">{likeCount}</span>
-          </div>
-        </div>
-        {/* // 프로젝트 정보 마무리 */}
-
-        {/* 그룹 정보 */}
-        <div className="group-info">
-
-          {/* 그룹 정보 컨테이너 */}
-          <div className="group-info-container">
-            <div className="teamname-area">
-              <div className="groupname-label">팀명</div>
-              <div className="groupname">{groupName}</div>
+          {/* 프로젝트 이미지 */}        
+          <img onClick={this.openModal} src="/images/test.jpg" alt="project-img" className="project-img"/>
+  
+  
+          {/* // 프로젝트 이미지 마무리 */}
+  
+          {/* 프로젝트 정보 */}
+          <div className="project-info">
+            <div className="project-title">{title}</div>
+            <div className="project-contents">
+              
+              {description}
+              {/* {selectedPart} */}
+  
             </div>
-            <div className="teammember-area">
-              <div className="groupmember-label">팀원</div>
-              <div className="groupmember">
-                {members}
+            <div className="project-like">
+            {/* <img src="/images/unlike-button.png" alt=""/> */}
+              <button className="project-like-button" onClick={this.handleLike}><img src={ isLike ? 
+  
+              "/images/like-button.png" : "/images/unlike-button@3x.png"} alt=""/></button>
+              
+              <span className="project-like-count">{likeCount}</span>
+            </div>
+          </div>
+          {/* // 프로젝트 정보 마무리 */}
+  
+          {/* 그룹 정보 */}
+          <div className="group-info">
+  
+            {/* 그룹 정보 컨테이너 */}
+            <div className="group-info-container">
+              <div className="teamname-area">
+                <div className="groupname-label">팀명</div>
+                <div className="groupname">{groupName}</div>
+              </div>
+              <div className="teammember-area">
+                <div className="groupmember-label">팀원</div>
+                <div className="groupmember">
+                  {members}
+                </div>
               </div>
             </div>
-
-
+  
+            {/* 동영상 버튼  */}
+            {
+              !isClicked && <>
+              <button className="show-video" onClick={this.handleClick}>시연 동영상 보기</button>
+              </>
+            }
+            
           </div>
-
-          {/* 동영상 버튼  */}
-          <button className="show-video" onClick={this.handleClick}>시연 동영상 보기</button>
+          {/* // 그룹 정보 마무리 */}
+  
         </div>
-        {/* // 그룹 정보 마무리 */}
-
-      </div>
-      {/* // 아티클 컨테이너 마무리 */}
+        {/* // 아티클 컨테이너 마무리 */}
+          </>
+        
+      }
+ 
 
       {/* video part */}
 
       <div className="video_area_wrapper">
+        {
+          isClicked && <>
+            <button className="show-video" onClick={this.handleClick}>시연 동영상 보기</button>
+          </>
+        }
+      
+
         <ReactPlayer 
           className="react-player" 
           // url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
