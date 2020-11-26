@@ -5,253 +5,223 @@ button {
   cursor: pointer;
 }
 
+@media screen and (min-width: 769px) {
+  /* PDF 부분 */
+  .modal-Root-Screen {
+    width: 40vw;
+    height: 60vh;
+  }
 
+  .modal-PDF-area {
+    height: 90%;
+    width: 100%;
+    border: 1px black solid;
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
 
-@media screen and (min-width: 769px) 
-{
+  .modal-button-area {
+    width: 100%;
+    height: 100%;
+    display: inline;
+  }
 
-/* PDF 부분 */
-.modal-Root-Screen {
-  width: 40vw;
-  height: 60vh;
-}
+  .modal-button,
+  .modal-button-navi {
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    height: 5%;
+  }
 
-.modal-PDF-area {
-  height: 90%;
-  width: 100%;
-  border: 1px black solid;
-  overflow-y: scroll;
-  overflow-x: scroll;
-}
+  .page-index {
+    margin-top: 10px;
+    float: right;
+  }
 
-.modal-button-area {
-  width: 100%;
-  height: 100%;
-  display: inline;
-}
+  /* PDF 부분 끝 */
 
-.modal-button ,.modal-button-navi{
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  margin-right: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-  height : 5%;
-}
+  .project-container {
+    /* top right bottom left */
 
+    width: 100%;
+    height: 100%;
+    grid-column: auto;
+    grid-row: auto;
 
-.page-index {
-  margin-top: 10px;
-  float: right;
-}
+    overflow-y: scroll;
+  }
 
+  .article {
+    display: inline;
+  }
 
-/* PDF 부분 끝 */
+  article .article-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-.project-container {
-  /* top right bottom left */
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
+  article .article-container .project-img {
+    width: 100%;
+    height: 47%;
+  }
 
-
-  width : 100%;
-  height : 100%;
-  grid-column : auto;
-  grid-row : auto;
-
-  overflow-y:scroll;
-
-}
-
-
-.article
-{
-  display: inline;
-}
-
-article .article-container {
-  display: block;
-  width: 100%;
-  height: 100%;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-::-webkit-scrollbar 
-{
-  display: none;
-}
-
-article .article-container .project-img {
-  width: 100%;
-  height : 47%;
-}
-
-article .article-container .project-info {
-  width: 99%;
-  height : 30%;
-
+  article .article-container .project-info {
+    width: 99%;
+    height: 30%;
 
     border: solid 1px #d8d8d8;
   }
 
-/* 프로젝트 정보 타이틀 */
-article .article-container .project-info .project-title {
-  margin-top: 5px;
-  margin-bottom: 10px;
- 
-  text-align: center;
-  font-weight: 600;
-  height: 15%;
-  font-size: 1.4rem;
-  color: #707070;
-}
+  /* 프로젝트 정보 타이틀 */
+  article .article-container .project-info .project-title {
+    margin-top: 5px;
+    margin-bottom: 10px;
 
-/* 프로젝트 정보 내용 */
-article .article-container .project-info .project-contents {
+    text-align: center;
+    font-weight: 600;
+    height: 15%;
+    font-size: 1.4rem;
+    color: #707070;
+  }
 
+  /* 프로젝트 정보 내용 */
+  article .article-container .project-info .project-contents {
+    text-align: center;
+    overflow-y: scroll;
+    margin-left: 15px;
+    height: 50%;
+    font-size: 1rem;
+    color: #707070;
+  }
 
-  text-align: center;
-  overflow-y: scroll;
-  margin-left : 15px;
-  height: 50%;
-  font-size: 1rem;
-  color: #707070;
-}
+  /* 프로젝트 좋아요 */
+  article .article-container .project-info .project-like {
+    display: block;
 
-/* 프로젝트 좋아요 */
-article .article-container .project-info .project-like {
-  display: block;
-  
+    margin-top: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    bottom: 0;
+    position: relative;
+  }
 
-  margin-top: 5px;
-  margin-right: auto;
-  margin-left : auto;
-  text-align: center;
-  bottom: 0;
-  position: relative;
+  article
+    .article-container
+    .project-info
+    .project-like
+    .project-like-button
+    img {
+    width: 17px;
+    height: auto;
+  }
 
-}
+  article .article-container .project-info .project-like .project-like-count {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    vertical-align: center;
 
-article
-  .article-container
-  .project-info
-  .project-like
-  .project-like-button
-  img {
-  width: 17px;
-  height: auto;
-}
+    font-size: 1rem;
+    color: #154483;
 
-article .article-container .project-info .project-like .project-like-count {
-  margin-left: 10px;
-  margin-bottom: 10px;
-  vertical-align: center;
-  
-  font-size: 1rem;
-  color: #154483;
+    position: relative;
+    top: -3px;
+  }
 
-  position: relative;
-  top: -3px;
-}
+  /* 그룹 정보 */
+  .group-info {
+    display: block;
 
-/* 그룹 정보 */
-.group-info {
-  display: block;
+    padding-top: 5px;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid 1px #d8d8d8;
+    width: 99%;
+    height: 13%;
+  }
 
-  padding-top : 5px;
-  flex-direction: column;
-  justify-content: space-around;
-  border: solid 1px #d8d8d8;
-  width: 99%;
-  height : 13%;
-}
+  .group-info .group-info-container {
+    display: inline-block;
+    padding-top: 0;
 
-.group-info .group-info-container {
-  
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
 
-  display: inline-block;
-  padding-top: 0;
-
-  text-align: center;
-  width: 100%;
-  height : 100%;
-}
-
-.teamname-area
-{
-  float:left;
-  width:50%;
-}
-.teammember-area
-{
-  float:right;
-  width:50%;
-  text-align: center;
-}
-
+  .teamname-area {
+    float: left;
+    width: 50%;
+  }
+  .teammember-area {
+    float: right;
+    width: 50%;
+    text-align: center;
+  }
 
   /* margin bottom 5 17 10 */
 
   .groupname-label {
     margin-bottom: 5px;
 
-  color: #154483;
-  font-size: 1rem;
-  font-weight: bold;
+    color: #154483;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .groupname {
+    margin-bottom: 5px;
 
-}
-.groupname {
-  margin-bottom: 5px;
+    color: #707070;
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .groupmember-label {
+    margin-bottom: 5px;
 
-  color: #707070;
-  font-size: 1rem;
-  line-height: 1;
+    color: #154483;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .groupmember {
+    color: #707070;
+    font-size: 0.9rem;
 
-}
-.groupmember-label {
-  margin-bottom: 5px;
+    line-height: 1.2;
+  }
 
-  color: #154483;
-  font-size: 1rem;
-  font-weight: bold;
+  .show-video {
+    /* position: relative; */
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #154483;
 
-}
-.groupmember {
-
-
-  color: #707070;
-  font-size: 0.9rem;
-  
-  line-height: 1.2;
-  
-}
-
-.group-info .show-video {
-
-  position : relative;
-  bottom: 0;
-  width: 100%;
-  height: 30px;
-  background-color: #154483;
-
-  font-size: 1.25rem;
-  font-weight: 600;
-  text-align: center;
-  
-
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
 
     color: #ffffff;
   }
 
-.project-container .video_area_wrapper {
-  width: 60%;
-  position: absolute;
-
-}
+  .project-container .video_area_wrapper {
+    width: 100%;
+    height: 50%;
+    /* position: absolute; */
+  }
 }
 /* @media screen and (max-width: 1200px) {
   .project-container .video_area_wrapper {
@@ -272,15 +242,13 @@ article .article-container .project-info .project-like .project-like-count {
 } */
 
 @media screen and (max-width: 768px) {
-
-
-    /* PDF 부분 */
+  /* PDF 부분 */
 
   .modal-Root-Screen {
     width: 80vw;
     height: 35vh;
   }
-  
+
   .modal-PDF-area {
     height: 90%;
     width: 100%;
@@ -288,17 +256,15 @@ article .article-container .project-info .project-like .project-like-count {
     overflow-y: scroll;
     overflow-x: scroll;
   }
-  
 
   .modal-button-area {
     width: 100%;
     height: 5%;
     display: inline;
   }
-  
-  .modal-button,.modal-button-navi  {
 
-
+  .modal-button,
+  .modal-button-navi {
     background-color: #4caf50; /* Green */
     border: none;
     color: white;
@@ -308,17 +274,14 @@ article .article-container .project-info .project-like .project-like-count {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    width : 10%;
-    height : 10%;
+    width: 10%;
+    height: 10%;
   }
 
-  
   .page-index {
     padding-top: 7px;
-    float : right;
+    float: right;
   }
-
-
 
   /* 프로젝트 정보 타이틀 */
   article .article-container .project-info {
@@ -345,7 +308,6 @@ article .article-container .project-info .project-like .project-like-count {
 
   article .article-container {
     display: block;
-
     border: solid 1px #d8d8d8;
   }
 
@@ -422,51 +384,36 @@ article .article-container .project-info .project-like .project-like-count {
     border: 1px solid black;
   }
 
-.article-container
-{
-  display: block;
-}
+  .article-container {
+    display: block;
+  }
 
+  .group-info {
+    border: 1px solid black;
+  }
 
-.group-info
-{
-  border: 1px solid black;
-}
+  .groupmember-label {
+    margin-top: 15px;
+  }
 
-.groupmember-label
-{
+  .groupname-label {
+    margin-bottom: 5px;
 
-  margin-top: 15px;
-}
+    color: #154483;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .groupname {
+    margin-bottom: 5px;
 
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .groupmember-label {
+    margin-bottom: 5px;
 
-.groupname-label {
-  margin-bottom: 5px;
-
-  color: #154483;
-  font-size: 1rem;
-  font-weight: bold;
-
-}
-.groupname {
-  margin-bottom: 5px;
-
-  font-size: 1rem;
-  line-height: 1;
-
-}
-.groupmember-label {
-  margin-bottom: 5px;
-
-  color: #154483;
-  font-size: 1rem;
-  font-weight: bold;
-
-}
-
-
-
-
-
-
+    color: #154483;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 }
