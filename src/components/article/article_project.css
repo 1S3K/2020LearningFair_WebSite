@@ -248,8 +248,11 @@ article .article-container .project-info .project-like .project-like-count {
   }
 
 .project-container .video_area_wrapper {
-  width: 60%;
+  width: 40vw;
+
   position: absolute;
+
+  z-index: 999;
 
 }
 }
@@ -270,6 +273,11 @@ article .article-container .project-info .project-like .project-like-count {
     width: 100%;
   }
 } */
+
+
+
+
+
 
 @media screen and (max-width: 768px) {
 
