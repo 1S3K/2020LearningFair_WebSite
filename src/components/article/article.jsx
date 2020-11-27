@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import ArticleHeader from './article_header';
 import ArticleProject from './article_project';
 
