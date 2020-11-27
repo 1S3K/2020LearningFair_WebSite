@@ -1,10 +1,12 @@
 import React, { Component,useState,Fragment } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import { render } from 'react-dom';
+import { IoIosCloseCircleOutline } from "react-icons/io";
+
 
 import ReactPlayer from 'react-player';
 import myPDF from './../../sample-pdf2.pdf';
 import Modal from 'react-modal';
+import styled from 'styled-components';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -24,6 +26,7 @@ const customStyles = {
   }
 };
 
+
 class ArticleProject extends Component {
 
   state = {
@@ -31,7 +34,9 @@ class ArticleProject extends Component {
     secondModalIsOpen: false,
     numPages: null,
     pageNumber: 1,
-    scale : 1
+    scale : 1,
+
+    videoModalIsOpen:false
   }
 
 
@@ -139,8 +144,6 @@ class ArticleProject extends Component {
 
 
       {/* 아티클 컨테이너 (비디오 제외) - 컴포넌트로 분리하기 */}
-      {
-        !isClicked && 
           <>
           <div className="article-container"> 
 
@@ -200,13 +203,12 @@ class ArticleProject extends Component {
         </div>
         {/* // 아티클 컨테이너 마무리 */}
           </>
-        
-      }
+
  
 
       {/* video part */}
 
-      <div className="video_area_wrapper">
+      {/* <div className="video_area_wrapper">
         {
           isClicked && <>
             <button className="show-video" onClick={this.handleClick}>시연 동영상 보기</button>
@@ -215,8 +217,7 @@ class ArticleProject extends Component {
       
 
         <ReactPlayer 
-          className="react-player" 
-          // url='https://www.youtube.com/watch?v=7C2z4GqqS5E' 
+          className="react-player"  
           url={video}
           width='100%'
           height='100%'
@@ -224,11 +225,72 @@ class ArticleProject extends Component {
           // playing
           controls
         />
-      </div>  
+      </div>   */}
+
+      {/* modal */}
+      <ModalOverlay visible={isClicked} />
+      <ModalWrapper tabIndex="-1" visible={isClicked}>
+        <ModalInner tabIndex="0" className="modal-inner">
+        <div className="modal-header">
+    <div className="modal-title">{title}</div>
+          <button className="close-btn" onClick={this.handleClick}><IoIosCloseCircleOutline size="36" color="#154483"/></button>
+        </div>
+        
+        <ReactPlayer 
+          className="react-player"  
+          url={video}
+          width='100%'
+          height='100%'
+          // style={{ display : (isClicked ? 'block' : 'none') }}
+          // playing
+          controls
+        />
+        </ModalInner>
+      </ModalWrapper>
     </article>
     );
   }
 }
+
+// modal style component (모달창 스타일 컴포넌트)
+const ModalWrapper = styled.div`
+  box-sizing: border-box;
+  display: ${(props) => (props.visible ? 'block' : 'none')};
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: auto;
+  outline: 0;
+`
+
+const ModalOverlay = styled.div`
+  box-sizing: border-box;
+  display: ${(props) => (props.visible ? 'block' : 'none')};
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+`
+
+const ModalInner = styled.div`
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  border-radius: 10px;
+  width: 960px;
+  max-width: 1280px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  padding: 20px 10px 5px;
+`
 
 export default ArticleProject;
 

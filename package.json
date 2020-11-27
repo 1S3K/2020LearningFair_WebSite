@@ -12,13 +12,15 @@
     "pdf-viewer-reactjs": "^2.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-icons": "^4.1.0",
     "react-modal": "^3.11.2",
     "react-overlays": "^4.1.1",
     "react-pdf": "^5.0.0",
     "react-player": "^2.7.0",
     "react-portal-overlay": "^1.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "styled-components": "^5.2.1"
   },
   "peerDependencies": {
     "closest": "^0.0.1",
