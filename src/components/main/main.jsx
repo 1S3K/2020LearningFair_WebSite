@@ -47,14 +47,14 @@ class Main extends Component {
                     <strong> 축사 동영상 </strong>
                   </div>
                   <div id="congrat_video_area_subtitle">
-                    성균SW교육원 김재현 원장님
+                    성균관대학교 신동렬 총장님
                   </div>
                   <div className="congrat_video_wrapper">
                     <ReactPlayer 
                       className="react-player" 
                       width="100%"
                       height="100%"
-                      url='/videos/test.mp4' 
+                      url='/videos/main_video_01.mp4' 
                       controls
                     />
                   </div>
@@ -67,14 +67,15 @@ class Main extends Component {
                     <strong style={{color: '#fff'}}> 축사 동영상 </strong>
                   </div>
                   <div id="congrat_video_area_subtitle">
-                    외부초청 홍길동님
+                    성균SW교육원 김재현 원장님
                   </div>
                   <div className="congrat_video_wrapper">
                     <ReactPlayer 
                       className="react-player" 
                       width="100%"
                       height="100%"
-                      url='https://www.youtube.com/watch?v=7C2z4GqqS5E' controls
+                      url='/videos/main_video_02.mp4' 
+                      controls
                     />
                   </div>
                 </div>
