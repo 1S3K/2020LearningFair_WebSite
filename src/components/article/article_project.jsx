@@ -1,6 +1,7 @@
 import React, { Component,useState,Fragment } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import { generateMedia } from 'styled-media-query';
 
 
 import ReactPlayer from 'react-player';
@@ -25,6 +26,13 @@ const customStyles = {
     
   }
 };
+
+const customMedia = generateMedia({
+  lgDesktop: '1350px',
+  mdDesktop: '1150px',
+  tablet: '960px',
+  mobile: '768px'
+});
 
 
 class ArticleProject extends Component {
@@ -191,11 +199,9 @@ class ArticleProject extends Component {
             </div>
   
             {/* 동영상 버튼  */}
-            {
-              !isClicked && <>
+            
               <button className="show-video" onClick={this.handleClick}>시연 동영상 보기</button>
-              </>
-            }
+            
             
           </div>
           {/* // 그룹 정보 마무리 */}
@@ -208,14 +214,7 @@ class ArticleProject extends Component {
 
       {/* video part */}
 
-      {/* <div className="video_area_wrapper">
-        {
-          isClicked && <>
-            <button className="show-video" onClick={this.handleClick}>시연 동영상 보기</button>
-          </>
-        }
-      
-
+      <div className="video_area_wrapper">
         <ReactPlayer 
           className="react-player"  
           url={video}
@@ -225,14 +224,14 @@ class ArticleProject extends Component {
           // playing
           controls
         />
-      </div>   */}
+      </div> 
 
       {/* modal */}
       <ModalOverlay visible={isClicked} />
       <ModalWrapper tabIndex="-1" visible={isClicked}>
         <ModalInner tabIndex="0" className="modal-inner">
         <div className="modal-header">
-    <div className="modal-title">{title}</div>
+          <div className="modal-title">{title}</div>
           <button className="close-btn" onClick={this.handleClick}><IoIosCloseCircleOutline size="36" color="#154483"/></button>
         </div>
         
@@ -241,8 +240,6 @@ class ArticleProject extends Component {
           url={video}
           width='100%'
           height='100%'
-          // style={{ display : (isClicked ? 'block' : 'none') }}
-          // playing
           controls
         />
         </ModalInner>
@@ -254,6 +251,9 @@ class ArticleProject extends Component {
 
 // modal style component (모달창 스타일 컴포넌트)
 const ModalWrapper = styled.div`
+  ${customMedia.lessThan('mobile')`
+    display: none;
+  `}
   box-sizing: border-box;
   display: ${(props) => (props.visible ? 'block' : 'none')};
   position: fixed;
@@ -267,6 +267,9 @@ const ModalWrapper = styled.div`
 `
 
 const ModalOverlay = styled.div`
+  ${customMedia.lessThan('mobile')`
+  display: none;
+  `}
   box-sizing: border-box;
   display: ${(props) => (props.visible ? 'block' : 'none')};
   position: fixed;
@@ -279,12 +282,15 @@ const ModalOverlay = styled.div`
 `
 
 const ModalInner = styled.div`
+  ${customMedia.lessThan('mobile')`
+  display: none;
+  `}
   box-sizing: border-box;
   position: relative;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
   background-color: #fff;
   border-radius: 10px;
-  width: 960px;
+  width: 50vw;
   max-width: 1280px;
   top: 50%;
   transform: translateY(-50%);
