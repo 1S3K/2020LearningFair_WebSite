@@ -116,6 +116,7 @@ skku ssen logo
     position: relative;
     top: 10px;
     width: 60vw;
+    /* width: 300px; */
     margin: 5px auto;
     margin-right: auto;
     margin-left: 20vw;
@@ -142,7 +143,15 @@ skku ssen logo
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 960px) {
+  .header-logo {
+    /* 가변 패딩값 (로고 너비 306px기준) */
+    width: 150px;
+    margin-top: 0;
+    margin-left: 1.25vw;
+    object-fit: fill;
+  }
+
   .header-profile .header-profile-name {
     display: none;
   }
