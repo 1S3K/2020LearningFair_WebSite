@@ -62,8 +62,7 @@ skku ssen logo
 @x1 size 306px x 78px
 */
 
-  /* 가변 패딩값 (로고 너비 306px기준) */
-
+/* 가변 패딩값 (로고 너비 306px기준) */
 
 .header-logo {
   /* 가변 패딩값 (로고 너비 306px기준) */
@@ -77,6 +76,10 @@ skku ssen logo
 .header-profile {
   margin-right: 1.40625%;
   font-size: 1.5em;
+}
+
+.header-menu-btn {
+  display: none;
 }
 
 .header-profile .header-profile-name {
@@ -97,41 +100,65 @@ skku ssen logo
   color: #707070;
 }
 
-@media screen and (max-width: 768px) {
+.header-menu-btn img {
+  /* display: none; */
+  width: 32px;
+  height: 32px;
+  padding: 0 8px;
+}
 
-  .header-container{
-    height : 10vh;
+@media screen and (max-width: 768px) {
+  .header-container {
+    height: 10vh;
   }
 
   .header-logo {
     position: relative;
-    top : 10px;
+    top: 10px;
     width: 60vw;
+    /* width: 300px; */
     margin: 5px auto;
     margin-right: auto;
-    margin-left : 20vw;
-    padding-top:10px;
+    margin-left: 20vw;
+    padding-top: 10px;
   }
 
-  .header-profile {
+  .header-profile .header-profile-name {
     display: none;
   }
-
-
+  .header-profile .header-profile-msg {
+    display: none;
+  }
+  .header-menu-btn {
+    display: block;
+  }
 }
 @media screen and (min-width: 769px) {
-
-  .header-container{
-    height : 10vh;
+  .header-container {
+    height: 10vh;
   }
   .header-logo {
     position: relative;
-    top : 5px;
-
+    top: 5px;
   }
-
-
-
-
 }
 
+@media screen and (max-width: 960px) {
+  .header-logo {
+    /* 가변 패딩값 (로고 너비 306px기준) */
+    width: 150px;
+    margin-top: 0;
+    margin-left: 1.25vw;
+    object-fit: fill;
+  }
+
+  .header-profile .header-profile-name {
+    display: none;
+  }
+  .header-profile .header-profile-msg {
+    display: none;
+  }
+  .header-menu-btn {
+    display: block;
+  }
+}
