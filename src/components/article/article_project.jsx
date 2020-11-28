@@ -1,7 +1,10 @@
 import React, { Component,useState,Fragment } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { BiPlusCircle,BiMinusCircle,BiSkipNextCircle,BiSkipPreviousCircle } from "react-icons/bi";
+import {IoIosCloseCircleOutline} from "react-icons/io"
 import { generateMedia } from 'styled-media-query';
+import throttle from "lodash.throttle";
+
 
 
 import ReactPlayer from 'react-player';
@@ -38,14 +41,21 @@ const customMedia = generateMedia({
 class ArticleProject extends Component {
 
   state = {
+    pdfObject :  {url :'http://www.africau.edu/images/default/sample.pdf'},
     modalIsOpen: false,
     secondModalIsOpen: false,
     numPages: null,
     pageNumber: 1,
-    scale : 1,
+    firstNumber : 1,
+
+    scale : 0.6,
+    thumbnailScale : 0.4,
 
     videoModalIsOpen:false
   }
+
+
+
 
 
   openModal = () => {
@@ -82,7 +92,7 @@ class ArticleProject extends Component {
   render() {
 
 
-    const { pageNumber, numPages,scale } = this.state;
+    const { firstNumber,pageNumber, numPages,scale,thumbnailScale } = this.state;
     const {title, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
 
     return (
@@ -103,7 +113,10 @@ class ArticleProject extends Component {
 
                   <div className ="modal-PDF-area">
                     <Document
-                    file={myPDF}
+                        file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
+                    // file = {this.state.pdfObject}
+                    // file = {myPDF}
+                    // file = {{data: JSON.parse("http://www.africau.edu/images/default/sample.pdf").data}}
                     // file = {{ url: 'http://www.africau.edu/images/default/sample.pdf', httpHeaders: { 'X-CustomHeader': '40359820958024350238508234' }, withCredentials: true }}
 
                       onLoadSuccess={this.onDocumentLoadSuccess}>
@@ -113,34 +126,36 @@ class ArticleProject extends Component {
                   </div>
 
                 <div className = "modal-button-area">
-                    <button className ="modal-button" onClick={() => this.setState({scale : this.state.scale = this.state.scale + 0.05})}>
-                        +
-                      </button>
 
-                      <button className ="modal-button" onClick={() => this.setState({scale : this.state.scale = this.state.scale - 0.05})}>
-                        -
-                      </button>
+                    <BiPlusCircle  color ="#174483" className ="modal-button" onClick={() => this.setState({scale : this.state.scale = this.state.scale + 0.05})}>
+
+                    </BiPlusCircle>
+              
+
+                      <BiMinusCircle color ="#174483" className ="modal-button" onClick={() => this.setState({scale : this.state.scale = this.state.scale - 0.05})}>
+                        
+                      </BiMinusCircle>
 
 
 
-                        <button className ="modal-button-navi" onClick={() => this.state.pageNumber > 1 ?
+                        <BiSkipPreviousCircle color ="#174483" className ="modal-button-navi" onClick={() => this.state.pageNumber > 1 ?
                           this.setState({numPages : this.state.numPages,
                             pageNumber : this.state.pageNumber-1}) : null}>
-                        ⇽
-                      </button>
+                        
+                      </BiSkipPreviousCircle>
 
-                      <button className ="modal-button" onClick={() => this.state.pageNumber < numPages ?
+                      <BiSkipNextCircle color ="#174483" className ="modal-button" onClick={() => this.state.pageNumber < numPages ?
                           this.setState({numPages : this.state.numPages,
                             pageNumber : this.state.pageNumber+1}) : null}>
-                          ⇾
-                    </button>
+                          
+                    </BiSkipNextCircle>
 
                     <span class = "page-index">{pageNumber} / {numPages}</span>
                
 
                 </div>
                           
-          </div>
+                 </div>
      
 
         </Modal>
@@ -152,37 +167,50 @@ class ArticleProject extends Component {
 
 
       {/* 아티클 컨테이너 (비디오 제외) - 컴포넌트로 분리하기 */}
-          <>
-          <div className="article-container"> 
+      <div className="article-container"> 
 
-          {/* 프로젝트 이미지 */}        
-          <img onClick={this.openModal} src="/images/test.jpg" alt="project-img" className="project-img"/>
+      <div className ="thumbnail-area">
+
+      <Document onClick={this.openModal} 
+                    file={myPDF}
+
+                      onLoadSuccess={this.onDocumentLoadSuccess}>
+                      <Page scale = {thumbnailScale} pageNumber={firstNumber} />
+      </Document>
+      </div>
+
+        {/* 프로젝트 이미지 */}        
   
-  
-          {/* // 프로젝트 이미지 마무리 */}
-  
-          {/* 프로젝트 정보 */}
-          <div className="project-info">
-            <div className="project-title">{title}</div>
-            <div className="project-contents">
-              
-              {description}
-              {/* {selectedPart} */}
-  
-            </div>
-            <div className="project-like">
-            {/* <img src="/images/unlike-button.png" alt=""/> */}
-              <button className="project-like-button" onClick={this.handleLike}><img src={ isLike ? 
-  
-              "/images/like-button.png" : "/images/unlike-button@3x.png"} alt=""/></button>
-              
-              <span className="project-like-count">{likeCount}</span>
-            </div>
+
+        {/* // 프로젝트 이미지 마무리 */}
+
+        {/* 프로젝트 정보 */}
+        <div className="project-info">
+          <div className="project-title">{title}</div>
+          <div className="project-contents">
+            
+            {description}
+            {/* {selectedPart} */}
+
           </div>
-          {/* // 프로젝트 정보 마무리 */}
+          <div className="project-like">
+          {/* <img src="/images/unlike-button.png" alt=""/> */}
+            <button className="project-like-button" onClick={this.handleLike}><img src={ isLike ? 
+
+            "/images/like-button.png" : "/images/unlike-button@3x.png"} alt=""/></button>
+            
+            <span className="project-like-count">{likeCount}</span>
+          </div>
+        </div>
+        {/* // 프로젝트 정보 마무리 */}
+
+        {/* 그룹 정보 */}
+        <div className="group-info">
+
+          {/* 그룹 정보 컨테이너 */}
+
   
-          {/* 그룹 정보 */}
-          <div className="group-info">
+     
   
             {/* 그룹 정보 컨테이너 */}
             <div className="group-info-container">
@@ -203,13 +231,13 @@ class ArticleProject extends Component {
               <button className="show-video" onClick={this.handleClick}>시연 동영상 보기</button>
             
             
-          </div>
+       
           {/* // 그룹 정보 마무리 */}
   
         </div>
         {/* // 아티클 컨테이너 마무리 */}
-          </>
-
+        
+</div>
  
 
       {/* video part */}
@@ -277,7 +305,7 @@ const ModalOverlay = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   z-index: 999;
 `
 
