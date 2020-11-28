@@ -41,6 +41,14 @@ class Article extends Component {
     });
   };
 
+  goSpecificPage = (i) => {
+    this.setState({
+      page: i,
+      start: (i-1)*10,
+      end: i*10,
+    });
+  }
+
 
 
   loadingData = async () => {
@@ -114,6 +122,10 @@ class Article extends Component {
     let page = this.state.page;
     let start = this.state.start;
     let end = this.state.end;
+    let buttons = [];
+    for(let i=1;i<parseInt(howmany/10)+2;i++){
+      buttons.push(<button onClick={()=>this.goSpecificPage(i)}>{i}페이지</button>)
+    }
     return (
       <section className="article">
         <ArticleHeader dataCount={howmany} classId={classId} />
@@ -132,6 +144,7 @@ class Article extends Component {
           ))}
         </section>
         <button onClick={this.goPrevPage}>이전페이지</button>
+        {buttons}
         <button onClick={this.goNextPage}>다음페이지</button>
       </section>
       
