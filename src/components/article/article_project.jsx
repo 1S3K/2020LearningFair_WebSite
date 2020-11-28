@@ -48,7 +48,7 @@ class ArticleProject extends Component {
     pageNumber: 1,
     firstNumber : 1,
 
-    scale : 0.6,
+    scale : 0.75,
     thumbnailScale : 0.4,
 
     videoModalIsOpen:false
@@ -172,7 +172,7 @@ class ArticleProject extends Component {
       <div className ="thumbnail-area">
 
       <Document onClick={this.openModal} 
-                    file={myPDF}
+                    file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
 
                       onLoadSuccess={this.onDocumentLoadSuccess}>
                       <Page scale = {thumbnailScale} pageNumber={firstNumber} />
