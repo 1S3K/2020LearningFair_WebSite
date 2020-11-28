@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import NavbarButtons from './navbar_buttons';
-
+import styled from 'styled-components';
+import { generateMedia } from 'styled-media-query';
 import './navbar.css';
+
+const customMedia = generateMedia({
+  lgDesktop: '1350px',
+  mdDesktop: '1150px',
+  tablet: '960px',
+  mobile: '768px'
+});
 
 class Navbar extends Component {
   state = {
@@ -15,17 +23,13 @@ class Navbar extends Component {
         '11', '12', '13','i1','i2'
       ]},
       {id: 2, name: '자연과학캠퍼스', isClicked: false, isShow: false, parts: [
-        '42분반', '43분반', '44분반'
+        '41분반','42분반', '43분반', '44분반'
       ],classNum: [
-        '42', '43', '44'
+        '41', '42', '43', '44'
       ]},
       {id: 3, name: 'SW인재페스티벌', isClicked: false, isShow: false, parts: [],classNum: []},
     ],
   };
-
-  componentDidMount() {
-    
-  }
 
   handleClick = campus => {
     console.log(campus);
@@ -44,40 +48,25 @@ class Navbar extends Component {
   };
 
   render() {
-    // console.log(this.props);
     const menuClicked = this.props.menuClicked;
-    const mql = window.matchMedia("screen and (max-width: 768px)");
-
-    console.log(mql.matches);    
-    console.log(menuClicked);
-
-    let displayState='block';
-    if (mql.matches)
-    {
-      if (menuClicked) {
-        displayState = 'block';
-      }
-      else {
-        displayState = 'none';
-      }
-    }
-    else if(!mql.matches)
-    {
-      displayState='block';
-    }
-
-    console.log(displayState);
-
     
     return (
-      
-      <nav className = "sidenav" style={{display: displayState}}>
+    <NavWrapper visible={menuClicked}>
+      <nav className = "sidenav" >
         {this.state.campi.map(campi => (
         <NavbarButtons key={campi.id} campi={campi} onClick={this.handleClick}/>
         ))}
       </nav>
+    </NavWrapper>
     );
   }
 }
+
+const NavWrapper = styled.div`
+  display: block;
+  ${customMedia.lessThan('tablet')`
+    display: ${(props) => (props.visible ? 'block' : 'none')};
+  `}
+`
 
 export default Navbar;

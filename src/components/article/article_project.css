@@ -5,61 +5,53 @@ button {
   cursor: pointer;
 }
 
+@media screen and (min-width: 769px) {
+  /* PDF 부분 */
+  .modal-Root-Screen {
+    width: 40vw;
+    height: 27vw;
+  }
 
-@media screen and (min-width: 769px) 
-{
+  .modal-PDF-area {
+    height: 85%;
+    width: 100%;
+    border: 1px black solid;
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
 
-/* PDF 부분 */
-.modal-Root-Screen {
-  width: 40vw;
-  height: 27vw;
-}
+  .modal-button-area {
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: inline;
+  }
+  .modal-button:hover,
+  .modal-button-navi:hover {
+    cursor: pointer;
+  }
 
-.modal-PDF-area {
-  height: 85%;
-  width: 100%;
-  border: 1px black solid;
-  overflow-y: scroll;
-  overflow-x: scroll;
-}
+  .modal-button,
+  .modal-button-navi {
+    margin-top: 2%;
+    background-color: none; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    height: 5%;
+  }
 
-.modal-button-area {
+  .page-index {
+    margin-top: 25px;
+    float: right;
+  }
 
- 
-  bottom : 0;
-  width: 100%;
-  height: 100%;
-  display: inline;
-}
-.modal-button:hover, .modal-button-navi:hover
-{
-  cursor: pointer;
-}
-
-.modal-button ,.modal-button-navi{
-  margin-top: 2%;
-  background-color: none; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  margin-right: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-  height : 5%;
-}
-
-
-.page-index {
-  margin-top: 25px;
-  float: right;
-}
-
-
-/* PDF 부분 끝 */
-
-
+  /* PDF 부분 끝 */
 
   .project-container {
     /* top right bottom left */
@@ -85,33 +77,24 @@ button {
 
 
 
-.thumbnail-area
-{
-  margin: 0;  
-  width: 100% !important;
-  height : 50%;
-  
-}
-.thumbnail-area .react-pdf__Document
-{
-  margin: 0;
-  padding : 0;
-  width: 100% !important;
-  height : 100%;
-  
-  
-}
-.thumbnail-area .react-pdf__Document .react-pdf__Page__canvas
-{
-  width: 100% !important;
-}
+  .thumbnail-area {
+    margin: 0;
+    width: 100% !important;
+    height: 50%;
+  }
+  .thumbnail-area .react-pdf__Document {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    height: 100%;
+  }
+  .thumbnail-area .react-pdf__Document .react-pdf__Page__canvas {
+    width: 100% !important;
+  }
 
-
-article .article-container .project-info {
-  width: 99%;
-  height : 25%;
-
-
+  article .article-container .project-info {
+    width: 99%;
+    height: 25%;
 
     border: solid 1px #d8d8d8;
   }
@@ -166,7 +149,7 @@ article .article-container .project-info {
     vertical-align: center;
 
     font-size: 1rem;
-    color: #154483;
+    color: #516682;
 
     position: relative;
     top: -3px;
@@ -274,8 +257,6 @@ article .article-container .project-info {
   .modal-Root-Screen {
     width: 80vw;
     height: 60vw;
-    
-
   }
 
   .modal-PDF-area {
@@ -294,11 +275,8 @@ article .article-container .project-info {
 
   .modal-button:hover,
   .modal-button-navi:hover {
-
     cursor: pointer;
-
   }
-
 
   .modal-button,
   .modal-button-navi {
@@ -319,26 +297,20 @@ article .article-container .project-info {
     float: right;
   }
 
-  .thumbnail-area
-{
-  margin: 0;  
-  width: 100% !important;
-  height : 50%;
-  
-}
-.thumbnail-area .react-pdf__Document
-{
-  margin: 0;
-  padding : 0;
-  width: 100% !important;
-  height : 100%;
-  
-  
-}
-.thumbnail-area .react-pdf__Document .react-pdf__Page__canvas
-{
-  width: 100% !important;
-}
+  .thumbnail-area {
+    margin: 0;
+    width: 100% !important;
+    height: 50%;
+  }
+  .thumbnail-area .react-pdf__Document {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    height: 100%;
+  }
+  .thumbnail-area .react-pdf__Document .react-pdf__Page__canvas {
+    width: 100% !important;
+  }
 
   /* 프로젝트 정보 타이틀 */
   article .article-container .project-info {
