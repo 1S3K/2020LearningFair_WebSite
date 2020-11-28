@@ -23,7 +23,6 @@ class Main extends Component {
   }
 
   render() {
-    // console.log(this.state.menuClicked);
     return (
       <section className="main-page">
         <Header isLogin={this.state.isLogin} menuClicked={this.state.menuClicked} onMenu={this.handleMenu}/>

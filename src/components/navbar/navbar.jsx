@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import NavbarButtons from './navbar_buttons';
-
+import styled from 'styled-components';
+import { generateMedia } from 'styled-media-query';
 import './navbar.css';
+
+const customMedia = generateMedia({
+  lgDesktop: '1350px',
+  mdDesktop: '1150px',
+  tablet: '960px',
+  mobile: '768px'
+});
 
 class Navbar extends Component {
   state = {
@@ -23,10 +31,6 @@ class Navbar extends Component {
     ],
   };
 
-  componentDidMount() {
-    
-  }
-
   handleClick = campus => {
     console.log(campus);
     const campi = [...this.state.campi];
@@ -44,40 +48,26 @@ class Navbar extends Component {
   };
 
   render() {
-    // console.log(this.props);
     const menuClicked = this.props.menuClicked;
-    const mql = window.matchMedia("screen and (max-width: 768px)");
-
-    console.log(mql.matches);    
-    console.log(menuClicked);
-
-    let displayState='block';
-    if (mql.matches)
-    {
-      if (menuClicked) {
-        displayState = 'block';
-      }
-      else {
-        displayState = 'none';
-      }
-    }
-    else if(!mql.matches)
-    {
-      displayState='block';
-    }
-
-    console.log(displayState);
-
     
     return (
-      
-      <nav className = "sidenav" style={{display: displayState}}>
+    <NavWrapper visible={menuClicked}>
+      {/* style={{display: displayState}} */}
+      <nav className = "sidenav" >
         {this.state.campi.map(campi => (
         <NavbarButtons key={campi.id} campi={campi} onClick={this.handleClick}/>
         ))}
       </nav>
+    </NavWrapper>
     );
   }
 }
+
+const NavWrapper = styled.div`
+  display: block;
+  ${customMedia.lessThan('tablet')`
+    display: ${(props) => (props.visible ? 'block' : 'none')};
+  `}
+`
 
 export default Navbar;
