@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import styled from "styled-components";
+import styled from 'styled-components';
+import { generateMedia } from 'styled-media-query';
 import ArticleHeader from "./article_header";
 import ArticleProject from "./article_project";
 
@@ -11,6 +12,12 @@ import "./article_project.css";
 import { pdfjs } from "react-pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
+const customMedia = generateMedia({
+  lgDesktop: '1350px',
+  mdDesktop: '1150px',
+  tablet: '960px',
+  mobile: '768px'
+});
 
 class Article extends Component {
   state = {
@@ -124,7 +131,7 @@ class Article extends Component {
     let end = this.state.end;
     let buttons = [];
     for(let i=1;i<parseInt(howmany/10)+2;i++){
-      buttons.push(<button onClick={()=>this.goSpecificPage(i)}>{i}페이지</button>)
+      buttons.push(<button onClick={()=>this.goSpecificPage(i)}>{i}</button>)
     }
     return (
       <section className="article">
@@ -143,13 +150,30 @@ class Article extends Component {
             />
           ))}
         </section>
-        <button onClick={this.goPrevPage}>이전페이지</button>
-        {buttons}
-        <button onClick={this.goNextPage}>다음페이지</button>
+
+        <PageButtons className="page-buttons">
+          <button onClick={this.goPrevPage}>◀︎ 이전</button>
+          {buttons}
+          <button onClick={this.goNextPage}>다음 ▶︎</button>
+        </PageButtons>
+
       </section>
       
     );
   }
 }
+
+const PageButtons = styled.div`
+  display: flex;
+  justify-content: space-around;
+  
+
+  margin: 50px auto 0;
+
+  width: 300px;
+  // ${customMedia.lessThan('tablet')`
+  //   display: ${(props) => (props.visible ? 'block' : 'none')};
+  // `}
+`
 
 export default Article;
