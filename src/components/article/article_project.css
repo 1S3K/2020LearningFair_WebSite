@@ -23,7 +23,7 @@ button {
   .modal-PDF-area .react-pdf__Document
   {
     height : 100% !important;
- 
+
   }
 
 
@@ -85,8 +85,14 @@ button {
     width: 100%;
     height: 100%;
     scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
+  .article-container ::-webkit-scrollbar
+  {
+    display: none;
+    
+  }
 
 
   .thumbnail-area {
@@ -128,7 +134,7 @@ button {
     text-align: center;
     overflow-y: scroll;
     margin-left: 15px;
-    height: 50%;
+    height: 40%;
     font-size: 1rem;
     color: #707070;
   }
