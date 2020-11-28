@@ -85,6 +85,19 @@ button {
     width: 100%;
     height: 100%;
     scrollbar-width: none;
+
+    -ms-overflow-style: none;
+  }
+
+
+  .project-container ::-webkit-scrollbar
+  {
+    display: none !important;
+  }
+  .project-container
+  {
+    overflow-y:hidden;
+    overflow-x:hidden;
     -ms-overflow-style: none;
   }
 
