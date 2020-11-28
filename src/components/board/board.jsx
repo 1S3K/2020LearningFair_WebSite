@@ -6,13 +6,24 @@ import Navbar from '../navbar/navbar';
 import './board.css';
 
 class Board extends Component {
+  state = {
+    isLogin: true,
+    menuClicked : false,
+  }
+
+  handleMenu = menuState => {
+    const state = this.state;
+    state.menuClicked = !menuState;
+    console.log(state);
+    this.setState({isLogin: state.isLogin, menuClicked: state.menuClicked}); 
+  }
+
   render() {
-    console.log(this.props);
     return (
       <section className="board-page">
-        <Header />
+        <Header isLogin={this.state.isLogin} menuClicked={this.state.menuClicked} onMenu={this.handleMenu}/>
         <section className="board-page-middle">
-          <Navbar />
+          <Navbar propsInfo={this.props} menuClicked={this.state.menuClicked}/>
 
           <section className="board-contents">
             <div className="board-img-container">
