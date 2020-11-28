@@ -31,6 +31,7 @@ class ArticleProject extends Component {
     secondModalIsOpen: false,
     numPages: null,
     pageNumber: 1,
+    firstNumber : 1,
     scale : 1
   }
 
@@ -69,7 +70,7 @@ class ArticleProject extends Component {
   render() {
 
 
-    const { pageNumber, numPages,scale } = this.state;
+    const { firstNumber,pageNumber, numPages,scale } = this.state;
     const {title, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
 
     return (
@@ -141,8 +142,18 @@ class ArticleProject extends Component {
       {/* 아티클 컨테이너 (비디오 제외) - 컴포넌트로 분리하기 */}
       <div className="article-container"> 
 
+      <div className ="thumbnail-area">
+
+      <Document onClick={this.openModal} 
+                    file={myPDF}
+
+                      onLoadSuccess={this.onDocumentLoadSuccess}>
+                      <Page scale = {scale} pageNumber={firstNumber} />
+      </Document>
+      </div>
+
         {/* 프로젝트 이미지 */}        
-        <img onClick={this.openModal} src="/images/test.jpg" alt="project-img" className="project-img"/>
+        {/* <img onClick={this.openModal} src="/images/test.jpg" alt="project-img" className="project-img"/> */}
 
 
         {/* // 프로젝트 이미지 마무리 */}

@@ -13,7 +13,7 @@ button {
 /* PDF 부분 */
 .modal-Root-Screen {
   width: 40vw;
-  height: 60vh;
+  height: 30vw;
 }
 
 .modal-PDF-area {
@@ -88,6 +88,22 @@ article .article-container {
 article .article-container .project-img {
   width: 100%;
   height : 47%;
+}
+
+.thumbnail-area
+{
+  margin: 0;
+  width: 25vw;
+  height : 300px;
+  
+}
+.thumbnail-area .react-pdf__Document
+{
+  margin: 0;
+  padding : 0;
+  width: 100%;
+  height : 100%;
+  transform : scale(0.25);
 }
 
 article .article-container .project-info {
@@ -286,7 +302,7 @@ article .article-container .project-info .project-like .project-like-count {
 
   .modal-Root-Screen {
     width: 80vw;
-    height: 35vh;
+    height: 60vw;
   }
   
   .modal-PDF-area {
