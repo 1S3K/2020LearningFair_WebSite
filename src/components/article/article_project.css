@@ -319,6 +319,7 @@ button {
     margin: 0;
     width: 100% !important;
     height: 50%;
+    border: 1px #154483 solid;
   }
   .thumbnail-area .react-pdf__Document {
     margin: 0;
