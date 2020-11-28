@@ -11,7 +11,7 @@ import Article from '../article/article';
 class Contents extends Component {
   state = {
     isLogin: true,
-    selectedPart: '1분반',
+    menuClicked : false,
     campi: [
       {id: 1, name: '인문사회캠퍼스', isClicked: false, isShow: false, parts: [
         '1분반', '2분반', '3분반', '4분반', '5분반', '6분반', '7분반',
@@ -24,13 +24,20 @@ class Contents extends Component {
     ],
   }
 
+  handleMenu = menuState => {
+    const state = this.state;
+    state.menuClicked = !menuState;
+    console.log(state);
+    this.setState({isLogin: state.isLogin, menuClicked: state.menuClicked}); 
+  }
+
   render() {
     const {params} = this.props.match;
     return (
       <section className="contents-page">
-        <Header isLogin={this.state.isLogin} />
+        <Header isLogin={this.state.isLogin} menuClicked={this.state.menuClicked} onMenu={this.handleMenu}/>
         <section className="contents-page-middle">
-          <Navbar propsInfo={this.props}/>
+          <Navbar propsInfo={this.props} menuClicked={this.state.menuClicked}/>
           <Article data={this.state} classId={params}/>
         </section>
         <Footer />

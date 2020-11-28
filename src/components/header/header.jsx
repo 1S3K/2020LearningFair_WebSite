@@ -33,7 +33,6 @@ class Header extends Component {
             <span className="header-profile-msg">환영합니다.</span>
 
             <button className="header-menu-btn" onClick={this.handleMenu}><img src="/images/menu.png" alt="메뉴"/></button>
-
             
           </div>
         }

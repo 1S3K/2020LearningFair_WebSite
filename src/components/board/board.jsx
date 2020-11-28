@@ -12,9 +12,7 @@ class Board extends Component {
       <section className="board-page">
         <Header />
         <section className="board-page-middle">
-          <Navbar 
-            // hist={this.props}
-          />
+          <Navbar />
 
           <section className="board-contents">
             <div className="board-img-container">
