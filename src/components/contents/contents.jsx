@@ -18,7 +18,7 @@ class Contents extends Component {
         '8분반', '9분반', '10분반', '11분반', '12분반', '13분반','I1분반', 'I2분반', 
       ]},
       {id: 2, name: '자연과학캠퍼스', isClicked: false, isShow: false, parts: [
-        '42분반', '43분반', '44분반'
+        '41분반', '42분반', '43분반', '44분반'
       ]},
       {id: 3, name: 'SW인재페스티벌', isClicked: false, isShow: false, parts: []},
     ],
