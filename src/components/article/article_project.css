@@ -5,47 +5,61 @@ button {
   cursor: pointer;
 }
 
-@media screen and (min-width: 769px) {
-  /* PDF 부분 */
-  .modal-Root-Screen {
-    width: 40vw;
-    height: 60vh;
-  }
 
-  .modal-PDF-area {
-    height: 90%;
-    width: 100%;
-    border: 1px black solid;
-    overflow-y: scroll;
-    overflow-x: scroll;
-  }
+@media screen and (min-width: 769px) 
+{
 
-  .modal-button-area {
-    width: 100%;
-    height: 100%;
-    display: inline;
-  }
+/* PDF 부분 */
+.modal-Root-Screen {
+  width: 40vw;
+  height: 27vw;
+}
 
-  .modal-button,
-  .modal-button-navi {
-    background-color: #4caf50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    margin-right: 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 30px;
-    height: 5%;
-  }
+.modal-PDF-area {
+  height: 85%;
+  width: 100%;
+  border: 1px black solid;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
 
-  .page-index {
-    margin-top: 10px;
-    float: right;
-  }
+.modal-button-area {
 
-  /* PDF 부분 끝 */
+ 
+  bottom : 0;
+  width: 100%;
+  height: 100%;
+  display: inline;
+}
+.modal-button:hover, .modal-button-navi:hover
+{
+  cursor: pointer;
+}
+
+.modal-button ,.modal-button-navi{
+  margin-top: 2%;
+  background-color: none; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  margin-right: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  height : 5%;
+}
+
+
+.page-index {
+  margin-top: 25px;
+  float: right;
+}
+
+
+/* PDF 부분 끝 */
+
+
 
   .project-container {
     /* top right bottom left */
@@ -66,7 +80,6 @@ button {
     display: block;
     width: 100%;
     height: 100%;
-    -ms-overflow-style: none;
     scrollbar-width: none;
   }
 
@@ -74,14 +87,33 @@ button {
     display: none;
   }
 
-  article .article-container .project-img {
-    width: 100%;
-    height: 47%;
-  }
+.thumbnail-area
+{
+  margin: 0;  
+  width: 100% !important;
+  height : 50%;
+  
+}
+.thumbnail-area .react-pdf__Document
+{
+  margin: 0;
+  padding : 0;
+  width: 100% !important;
+  height : 100%;
+  
+  
+}
+.thumbnail-area .react-pdf__Document .react-pdf__Page__canvas
+{
+  width: 100% !important;
+}
 
-  article .article-container .project-info {
-    width: 99%;
-    height: 30%;
+
+article .article-container .project-info {
+  width: 99%;
+  height : 25%;
+
+
 
     border: solid 1px #d8d8d8;
   }
@@ -193,7 +225,7 @@ button {
     margin-bottom: 5px;
 
     color: #154483;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: bold;
   }
   .groupmember {
@@ -243,7 +275,9 @@ button {
 
   .modal-Root-Screen {
     width: 80vw;
-    height: 35vh;
+    height: 60vw;
+    
+
   }
 
   .modal-PDF-area {
@@ -260,9 +294,16 @@ button {
     display: inline;
   }
 
+  .modal-button:hover,
+  .modal-button-navi:hover {
+
+    cursor: pointer;
+
+  }
+
+
   .modal-button,
   .modal-button-navi {
-    background-color: #4caf50; /* Green */
     border: none;
     color: white;
     padding: auto;
@@ -276,9 +317,30 @@ button {
   }
 
   .page-index {
-    padding-top: 7px;
+    padding-top: 10px;
     float: right;
   }
+
+  .thumbnail-area
+{
+  margin: 0;  
+  width: 100% !important;
+  height : 50%;
+  
+}
+.thumbnail-area .react-pdf__Document
+{
+  margin: 0;
+  padding : 0;
+  width: 100% !important;
+  height : 100%;
+  
+  
+}
+.thumbnail-area .react-pdf__Document .react-pdf__Page__canvas
+{
+  width: 100% !important;
+}
 
   /* 프로젝트 정보 타이틀 */
   article .article-container .project-info {
