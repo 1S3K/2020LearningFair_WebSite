@@ -18,11 +18,12 @@ class Article extends Component {
     page: 1,
     start: 0,
     end: 10,
+    howmany:0
   };
 
   goNextPage = () => {
-    const { page, start, end } = this.state;
-    if(end > 13) return;
+    const { page, start, end, howmany } = this.state;
+    if(end > howmany) return;
     this.setState({
       page: page + 1,
       start: start + 10,
@@ -59,6 +60,7 @@ class Article extends Component {
 
       this.setState({
         data: fetchData,
+        howmany: fetchData.length
       });
     } catch (e) {
       console.log(e);
@@ -108,12 +110,13 @@ class Article extends Component {
   render() {
     const selectedPart = this.props.data.selectedPart;
     const classId = this.props.classId;
+    const howmany = this.state.howmany;
     let page = this.state.page;
     let start = this.state.start;
     let end = this.state.end;
     return (
       <section className="article">
-        <ArticleHeader dataCount={this.state.data.length} classId={classId} />
+        <ArticleHeader dataCount={howmany} classId={classId} />
 
         <section className="project-area">
           {this.state.data.slice(start, end).map((item, index) => (
