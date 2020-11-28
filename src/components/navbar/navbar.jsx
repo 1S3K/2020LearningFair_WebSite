@@ -23,9 +23,9 @@ class Navbar extends Component {
         '11', '12', '13','i1','i2'
       ]},
       {id: 2, name: '자연과학캠퍼스', isClicked: false, isShow: false, parts: [
-        '42분반', '43분반', '44분반'
+        '41분반','42분반', '43분반', '44분반'
       ],classNum: [
-        '42', '43', '44'
+        '41', '42', '43', '44'
       ]},
       {id: 3, name: 'SW인재페스티벌', isClicked: false, isShow: false, parts: [],classNum: []},
     ],
@@ -52,7 +52,6 @@ class Navbar extends Component {
     
     return (
     <NavWrapper visible={menuClicked}>
-      {/* style={{display: displayState}} */}
       <nav className = "sidenav" >
         {this.state.campi.map(campi => (
         <NavbarButtons key={campi.id} campi={campi} onClick={this.handleClick}/>

@@ -5,7 +5,7 @@ class ArticleHeader extends Component {
   render() {
     // console.log(this.props);
     const classId = this.props.classId.id;
-    const campusName = (classId == '42' || classId == '43' || classId == '44' ? '자연과학캠퍼스' : '인문사회캠퍼스')
+    const campusName = (classId == '41' || classId == '42' || classId == '43' || classId == '44' ? '자연과학캠퍼스' : '인문사회캠퍼스')
     return (
       <div className="section-header">
         {/* 분반 정보 */}
