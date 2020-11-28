@@ -24,7 +24,7 @@ class Article extends Component {
     data: [],
     page: 1,
     start: 0,
-    end: 10,
+    end: 9,
     howmany:0
   };
 
@@ -33,8 +33,8 @@ class Article extends Component {
     if(end > howmany) return;
     this.setState({
       page: page + 1,
-      start: start + 10,
-      end: end + 10,
+      start: start + 9,
+      end: end + 9,
     });
   };
 
@@ -43,16 +43,16 @@ class Article extends Component {
     if (start === 0) return;
     this.setState({
       page: page - 1,
-      start: start - 10,
-      end: end - 10,
+      start: start - 9,
+      end: end - 9,
     });
   };
 
   goSpecificPage = (i) => {
     this.setState({
       page: i,
-      start: (i-1)*10,
-      end: i*10,
+      start: (i-1)*9,
+      end: i*9,
     });
   }
 
@@ -130,7 +130,7 @@ class Article extends Component {
     let start = this.state.start;
     let end = this.state.end;
     let buttons = [];
-    for(let i=1;i<parseInt(howmany/10)+2;i++){
+    for(let i=1;i<parseInt(howmany/9)+2;i++){
       buttons.push(<button onClick={()=>this.goSpecificPage(i)}>{i}</button>)
     }
     return (
