@@ -20,8 +20,7 @@ section .article {
   /* border: 1px solid #707070; */
 }
 
-.page-buttons button:hover,
-.page-buttons button:focus {
+.page-buttons button:hover {
   font-weight: bold;
   color: white;
   background-color: #154483;

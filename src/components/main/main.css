@@ -10,6 +10,7 @@
 
 .contents .main_banner_area {
   width: 100%;
+  text-align: center;
 }
 
 .contents .main_banner_area .main_banner_img {
@@ -30,8 +31,8 @@
 }
 
 #congrat_video_area_subtitle {
-  font-size: 2vh;
-  font-weight: 500;
+  font-size: 2.5vh;
+  font-weight: bold;
   margin-top: 20px;
   color: #154483;
 }

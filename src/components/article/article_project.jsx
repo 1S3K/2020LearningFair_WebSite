@@ -93,8 +93,10 @@ class ArticleProject extends Component {
 
 
     const { firstNumber,pageNumber, numPages,scale,thumbnailScale } = this.state;
-    const {title, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
+    const classId = this.props.classId;
+    const {title, group, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
 
+    console.log(this.props);
     return (
 
 
@@ -186,11 +188,10 @@ class ArticleProject extends Component {
 
         {/* 프로젝트 정보 */}
         <div className="project-info">
-          <div className="project-title">{title}</div>
+                          <div className="project-title">{classId.id}분반 {group}조</div>
           <div className="project-contents">
             
-            {description}
-            {/* {selectedPart} */}
+            {title}
 
           </div>
           <div className="project-like">
@@ -242,7 +243,7 @@ class ArticleProject extends Component {
 
       {/* video part */}
 
-      <div className="video_area_wrapper">
+      {/* <div className="video_area_wrapper">
         <ReactPlayer 
           className="react-player"  
           url={video}
@@ -252,10 +253,10 @@ class ArticleProject extends Component {
           // playing
           controls
         />
-      </div> 
+      </div>  */}
 
       {/* modal */}
-      <ModalOverlay visible={isClicked} />
+    <ModalOverlay visible={isClicked} />
       <ModalWrapper tabIndex="-1" visible={isClicked}>
         <ModalInner tabIndex="0" className="modal-inner">
         <div className="modal-header">
@@ -269,6 +270,7 @@ class ArticleProject extends Component {
           width='100%'
           height='100%'
           controls
+          playing={isClicked}
         />
         </ModalInner>
       </ModalWrapper>

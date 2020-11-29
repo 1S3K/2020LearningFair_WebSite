@@ -19,13 +19,13 @@ class Header extends Component {
     const isLogin = this.props.isLogin;
     const name = sessionStorage.getItem("username");
     const url = name ? '/main' : '/'
-    let mql = window.matchMedia("screen and (max-width: 768px)");
-    console.log(mql);
 
     return (
     <header style={{display: (isLogin ? '' : 'flex')}} className="header-container">
-      
-        <Link to={url} style={{all: 'unset'}}><img src="/images/logo.png" alt="로고" className="header-logo"/></Link>
+    
+    <Link to={url} style={{all: 'unset'}}><img src="/images/logo.png" className="header-logo" alt=""/></Link>
+    
+
         {
           isLogin && 
           <div className="header-profile">
