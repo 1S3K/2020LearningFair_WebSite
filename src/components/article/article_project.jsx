@@ -96,7 +96,6 @@ class ArticleProject extends Component {
     const classId = this.props.classId;
     const {title, group, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
 
-    console.log(this.props);
     return (
 
 
@@ -245,7 +244,7 @@ class ArticleProject extends Component {
 
       <div className="video_area_wrapper">
         <ReactPlayer 
-          className="react-player"  
+          className="react-player" 
           url={video}
           width='100%'
           height='100%'
@@ -256,13 +255,14 @@ class ArticleProject extends Component {
       </div> 
 
       {/* modal */}
-    <ModalOverlay visible={isClicked} onClick={this.handleClick}>
-      <ModalWrapper tabIndex="-1" visible={isClicked}>
+      <ModalOverlay visible={isClicked} onClick={this.handleClick}>
+      <ModalWrapper tabIndex="-1" visible={isClicked} >
         <ModalInner tabIndex="0" className="modal-inner">
         <div className="modal-header">
           <div className="modal-title">{title}</div>
-          <button className="close-btn" onClick={this.handleClick}><IoIosCloseCircleOutline size="36" color="#154483"/></button>
+          {/* <button className="close-btn" onClick={this.handleClick}><IoIosCloseCircleOutline size="36" color="#154483"/></button> */}
         </div>
+        
         <ReactPlayer 
           className="react-player"  
           url={video}
@@ -273,7 +273,8 @@ class ArticleProject extends Component {
         />
         </ModalInner>
       </ModalWrapper>
-    </ModalOverlay>
+      </ModalOverlay>
+
 
     </article>
     );
