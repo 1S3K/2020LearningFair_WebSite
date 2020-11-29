@@ -93,8 +93,10 @@ class ArticleProject extends Component {
 
 
     const { firstNumber,pageNumber, numPages,scale,thumbnailScale } = this.state;
-    const {title, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
+    const classId = this.props.classId;
+    const {title, group, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
 
+    console.log(this.props);
     return (
 
 
@@ -186,11 +188,10 @@ class ArticleProject extends Component {
 
         {/* 프로젝트 정보 */}
         <div className="project-info">
-          <div className="project-title">{title}</div>
+                          <div className="project-title">{classId.id}분반 {group}조</div>
           <div className="project-contents">
             
-            {description}
-            {/* {selectedPart} */}
+            {title}
 
           </div>
           <div className="project-like">

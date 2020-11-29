@@ -20,16 +20,11 @@ button {
     overflow-x: scroll;
   }
 
-  .modal-PDF-area .react-pdf__Document
-  {
-    height : 100% !important;
-
+  .modal-PDF-area .react-pdf__Document {
+    height: 100% !important;
   }
 
-
-  .modal-PDF-area .react-pdf__Document .react-pdf__Page__canvas
-  {
-
+  .modal-PDF-area .react-pdf__Document .react-pdf__Page__canvas {
   }
 
   .modal-button-area {
@@ -89,24 +84,18 @@ button {
     -ms-overflow-style: none;
   }
 
-
-  .project-container ::-webkit-scrollbar
-  {
+  .project-container ::-webkit-scrollbar {
     display: none !important;
   }
-  .project-container
-  {
-    overflow-y:hidden;
-    overflow-x:hidden;
+  .project-container {
+    overflow-y: hidden;
+    overflow-x: hidden;
     -ms-overflow-style: none;
   }
 
-  .article-container ::-webkit-scrollbar
-  {
+  .article-container ::-webkit-scrollbar {
     display: none;
-    
   }
-
 
   .thumbnail-area {
     margin: 0;
@@ -148,7 +137,7 @@ button {
     overflow-y: scroll;
     margin-left: 15px;
     height: 40%;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #707070;
   }
 
