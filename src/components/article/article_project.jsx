@@ -243,7 +243,7 @@ class ArticleProject extends Component {
 
       {/* video part */}
 
-      {/* <div className="video_area_wrapper">
+      <div className="video_area_wrapper">
         <ReactPlayer 
           className="react-player"  
           url={video}
@@ -253,17 +253,16 @@ class ArticleProject extends Component {
           // playing
           controls
         />
-      </div>  */}
+      </div> 
 
       {/* modal */}
-    <ModalOverlay visible={isClicked} />
+    <ModalOverlay visible={isClicked} onClick={this.handleClick}>
       <ModalWrapper tabIndex="-1" visible={isClicked}>
         <ModalInner tabIndex="0" className="modal-inner">
         <div className="modal-header">
           <div className="modal-title">{title}</div>
           <button className="close-btn" onClick={this.handleClick}><IoIosCloseCircleOutline size="36" color="#154483"/></button>
         </div>
-        
         <ReactPlayer 
           className="react-player"  
           url={video}
@@ -274,6 +273,8 @@ class ArticleProject extends Component {
         />
         </ModalInner>
       </ModalWrapper>
+    </ModalOverlay>
+
     </article>
     );
   }
