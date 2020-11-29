@@ -243,7 +243,7 @@ class ArticleProject extends Component {
 
       {/* video part */}
 
-      <div className="video_area_wrapper">
+      {/* <div className="video_area_wrapper">
         <ReactPlayer 
           className="react-player"  
           url={video}
@@ -253,10 +253,10 @@ class ArticleProject extends Component {
           // playing
           controls
         />
-      </div> 
+      </div>  */}
 
       {/* modal */}
-      <ModalOverlay visible={isClicked} />
+    <ModalOverlay visible={isClicked} />
       <ModalWrapper tabIndex="-1" visible={isClicked}>
         <ModalInner tabIndex="0" className="modal-inner">
         <div className="modal-header">
@@ -270,6 +270,7 @@ class ArticleProject extends Component {
           width='100%'
           height='100%'
           controls
+          playing={isClicked}
         />
         </ModalInner>
       </ModalWrapper>
