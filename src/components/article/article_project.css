@@ -215,7 +215,7 @@ button {
     /* display: inline-block; */
     padding-top: 0;
 
-    text-align: center;
+    /* text-align: center; */
     width: 100%;
     height: 100%;
   }
@@ -224,12 +224,14 @@ button {
     float: left;
     padding-top: 13px;
     width: 30%;
+    text-align: center;
   }
   .teammember-area {
     float: right;
     padding-top: 13px;
+    /* margin-right: 13px; */
     width: 70%;
-    text-align: center;
+    text-align: right;
   }
 
   /* margin bottom 5 17 10 */
@@ -262,6 +264,8 @@ button {
 
     line-height: 1.2;
     font-weight: bold;
+
+    padding-right: 13px;
   }
 
   .show-video {
