@@ -162,7 +162,7 @@ button {
     height: 40%;
     font-size: 1.1rem;
     /* font-weight: bold; */
-    color: #707070;
+    color: black;
   }
 
   /* 프로젝트 좋아요 */
@@ -288,7 +288,7 @@ button {
   }
 
   .modal-title {
-    color: #707070;
+    color: #154483;
     font-size: 24px;
     font-weight: bold;
   }
