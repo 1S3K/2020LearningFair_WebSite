@@ -129,7 +129,7 @@ button {
     text-align: center;
     font-weight: 600;
     height: 15%;
-    font-size: 1.2rem;
+    font-size: 1vw;
     color: #154483;
   }
 
@@ -202,14 +202,12 @@ button {
   .teamname-area {
     float: left;
     padding-top: 13px;
-    width: 40%;
-    min-width: 30%;
+    width: 30%;
   }
   .teammember-area {
     float: right;
     padding-top: 13px;
     width: 70%;
-    max-width: 60%;
     text-align: center;
   }
 
@@ -234,17 +232,15 @@ button {
     margin-bottom: 5px;
 
     color: #154483;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
   }
   .groupmember {
     color: #707070;
-    font-size: 0.9vw;
+    font-size: 0.85vw;
 
     line-height: 1.2;
     font-weight: bold;
-
-    padding-right: 10px;
   }
 
   .show-video {
@@ -270,8 +266,6 @@ button {
     color: #707070;
     font-size: 24px;
     font-weight: bold;
-    /* width: 95%;
-    height: 50px; */
   }
 }
 @media screen and (max-width: 1200px) {
