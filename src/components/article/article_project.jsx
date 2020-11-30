@@ -188,17 +188,17 @@ class ArticleProject extends Component {
 
         {/* 프로젝트 정보 */}
         <div className="project-info">
-          <div className="project-title">{classId.id}분반 {group}조</div>
+          <div className="project-title">{title}</div>
           <div className="project-contents">
             
-            {title}
+            {groupName}
 
           </div>
           <div className="project-like">
           {/* <img src="/images/unlike-button.png" alt=""/> */}
             <button className="project-like-button" onClick={this.handleLike}><img src={ isLike ? 
 
-            "/images/like-button.png" : "/images/unlike-button@3x.png"} alt=""/></button>
+            "/images/like-button-hand.png" : "/images/unlike-button-hand.png"} alt=""/></button>
             
             <span className="project-like-count">{likeCount}</span>
           </div>
@@ -216,11 +216,11 @@ class ArticleProject extends Component {
             {/* 그룹 정보 컨테이너 */}
             <div className="group-info-container">
               <div className="teamname-area">
-                <div className="groupname-label">팀명</div>
-                <div className="groupname">{groupName}</div>
+                {/* <div className="groupname-label"></div> */}
+                <div className="groupname">{classId.id}분반 {group}조</div>
               </div>
               <div className="teammember-area">
-                <div className="groupmember-label">팀원</div>
+                {/* <div className="groupmember-label"></div> */}
                 <div className="groupmember">
                   {members}
                 </div>

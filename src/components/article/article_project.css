@@ -105,8 +105,9 @@ button {
   .thumbnail-area .react-pdf__Document {
     margin: 0;
     padding: 0;
-    width: 100% !important;
+    width: 99% !important;
     height: 100%;
+    border: 1px #d8d8d8 solid;
   }
   .thumbnail-area .react-pdf__Document .react-pdf__Page__canvas {
     width: 100% !important;
@@ -170,7 +171,7 @@ button {
     margin-bottom: 10px;
     vertical-align: center;
 
-    font-size: 1.75rem;
+    font-size: 1.3rem;
     color: #516682;
 
     position: relative;
@@ -186,11 +187,11 @@ button {
     justify-content: space-around;
     border: solid 1px #d8d8d8;
     width: 99%;
-    height: 13%;
+    height: 10%;
   }
 
   .group-info .group-info-container {
-    display: inline-block;
+    /* display: inline-block; */
     padding-top: 0;
 
     text-align: center;
@@ -200,11 +201,15 @@ button {
 
   .teamname-area {
     float: left;
-    width: 50%;
+    padding-top: 13px;
+    width: 40%;
+    min-width: 30%;
   }
   .teammember-area {
     float: right;
-    width: 50%;
+    padding-top: 13px;
+    width: 70%;
+    max-width: 60%;
     text-align: center;
   }
 
@@ -221,7 +226,7 @@ button {
     margin-bottom: 5px;
 
     color: #707070;
-    font-size: 1.1rem;
+    font-size: 1vw;
     line-height: 1;
     font-weight: bold;
   }
@@ -234,10 +239,12 @@ button {
   }
   .groupmember {
     color: #707070;
-    font-size: 0.9rem;
+    font-size: 0.9vw;
 
     line-height: 1.2;
     font-weight: bold;
+
+    padding-right: 10px;
   }
 
   .show-video {
