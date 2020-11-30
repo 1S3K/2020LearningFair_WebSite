@@ -188,7 +188,7 @@ class ArticleProject extends Component {
 
         {/* 프로젝트 정보 */}
         <div className="project-info">
-                          <div className="project-title">{classId.id}분반 {group}조</div>
+          <div className="project-title">{classId.id}분반 {group}조</div>
           <div className="project-contents">
             
             {title}
