@@ -230,7 +230,7 @@ class ArticleProject extends Component {
   
             {/* 동영상 버튼  */}
             
-              <button className="show-video" onClick={this.handleClick}>시연 동영상 보기</button>
+              <button className="show-video" onClick={this.handleClick}>발표 영상 보기</button>
             
             
        
