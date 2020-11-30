@@ -159,7 +159,7 @@ button {
     .project-like
     .project-like-button
     img {
-    width: 17px;
+    width: 24px;
     height: auto;
   }
 
@@ -168,7 +168,7 @@ button {
     margin-bottom: 10px;
     vertical-align: center;
 
-    font-size: 1rem;
+    font-size: 1.75rem;
     color: #516682;
 
     position: relative;
@@ -219,7 +219,7 @@ button {
     margin-bottom: 5px;
 
     color: #707070;
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1;
   }
   .groupmember-label {
