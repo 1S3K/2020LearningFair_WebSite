@@ -223,6 +223,7 @@ class ArticleProject extends Component {
                 {/* <div className="groupmember-label"></div> */}
                 <div className="groupmember">
                   {members}
+                  {/* Yokomura Mae, 김예린, 서진경, 이채은 */}
                 </div>
               </div>
             </div>
