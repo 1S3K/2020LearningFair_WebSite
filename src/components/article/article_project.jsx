@@ -94,7 +94,7 @@ class ArticleProject extends Component {
 
     const { firstNumber,pageNumber, numPages,scale,thumbnailScale } = this.state;
     const classId = this.props.classId;
-    const {title, group, groupName, members, description, likeCount, video, isClicked, isLike} = this.props.item;
+    const {title, group, groupName, members, description, pdf, likeCount, video, isClicked, isLike} = this.props.item;
 
     return (
 
@@ -114,7 +114,8 @@ class ArticleProject extends Component {
 
                   <div className ="modal-PDF-area">
                     <Document
-                        file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
+                        file={pdf}
+                        // file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
                     // file = {this.state.pdfObject}
                     // file = {myPDF}
                     // file = {{data: JSON.parse("http://www.africau.edu/images/default/sample.pdf").data}}
