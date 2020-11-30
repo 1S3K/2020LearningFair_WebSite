@@ -18,13 +18,24 @@ button {
     border: 1px black solid;
     overflow-y: scroll;
     overflow-x: scroll;
+
+    overflow-x: auto;
+    overflow-y :auto;
+
+  }
+  .modal-PDF-area::-webkit-scrollbar
+  {
+  
   }
 
   .modal-PDF-area .react-pdf__Document {
-    height: 100% !important;
+    height : 100%;
   }
 
   .modal-PDF-area .react-pdf__Document .react-pdf__Page__canvas {
+    width: 100% ;
+
+
   }
 
   .modal-button-area {
@@ -108,6 +119,16 @@ button {
     width: 99% !important;
     height: 100%;
     border: 1px #d8d8d8 solid;
+  }
+  .thumbnail-area .react-pdf__Document .react-pdf__Page {
+    
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .thumbnail-area .react-pdf__Document .react-pdf__Page .react-pdf__Page__canvas{
+    
+    width: 100% !important;
+    height: 100% !important;
   }
   .thumbnail-area .react-pdf__Document .react-pdf__Page__canvas {
     width: 100% !important;
