@@ -174,8 +174,8 @@ class ArticleProject extends Component {
       <div className ="thumbnail-area">
 
       <Document onClick={this.openModal} 
-                    file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
-
+                    // file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
+                    file={pdf}
                       onLoadSuccess={this.onDocumentLoadSuccess}>
                       <Page scale = {thumbnailScale} pageNumber={firstNumber} />
       </Document>

@@ -328,6 +328,7 @@ button {
     padding: 0;
     width: 100% !important;
     height: 100%;
+    /* border: 1px #154483 solid; */
   }
   .thumbnail-area .react-pdf__Document .react-pdf__Page__canvas {
     width: 100% !important;
