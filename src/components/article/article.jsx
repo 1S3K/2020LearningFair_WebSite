@@ -170,7 +170,7 @@ const PageButtons = styled.div`
 
   margin: 50px auto 0;
 
-  width: 300px;
+  width: 310px;
   // ${customMedia.lessThan('tablet')`
   //   display: ${(props) => (props.visible ? 'block' : 'none')};
   // `}
