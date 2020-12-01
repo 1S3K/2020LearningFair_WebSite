@@ -126,11 +126,11 @@ class ArticleProject extends Component {
 
              
                       {window.innerWidth >= 768  &&
-                       <Page scale = {scale} pageNumber={pageNumber} />
+                       <Page scale = {scale + 0.25} pageNumber={pageNumber} />
                        }       
 
                       {window.innerWidth < 768 &&
-                      <Page scale = {scale - 0.2} pageNumber={pageNumber} />
+                      <Page scale = {scale - 0.15} pageNumber={pageNumber} />
                        }
 
 
