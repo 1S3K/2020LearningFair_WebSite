@@ -44,7 +44,7 @@ class ArticleProject extends Component {
 
     scale : 0.55,
     mobile_scale : 0.3,
-    thumbnailScale : 0.4,
+    thumbnailScale : 1,
 
     videoModalIsOpen:false
   }
@@ -111,7 +111,6 @@ class ArticleProject extends Component {
                     <Document
                     // file = {myPDF}
                     
-
                         file={pdf}
                         // file="https://cors-anywhere.herokuapp.com/http://www.africau.edu/images/default/sample.pdf"
                     // file = {this.state.pdfObject}
@@ -184,10 +183,12 @@ class ArticleProject extends Component {
 
       <Document onClick={this.openModal} 
                     // file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
+                    // file ={"https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/pdf/03/p14.pdf"}
+
                     file={pdf}
                     // file = {myPDF}
                       onLoadSuccess={this.onDocumentLoadSuccess}>
-                      <Page scale = {thumbnailScale} pageNumber={firstNumber} />
+                      <Page renderMode = {"canvas"} scale = {thumbnailScale} pageNumber={firstNumber} />
       </Document>
       </div>
 
