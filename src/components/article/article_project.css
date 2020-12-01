@@ -302,7 +302,10 @@ button {
 
   /* PDF 부분 */
 
-
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    }
 
   .react-pdf__Page__canvas
   {
