@@ -91,13 +91,13 @@ class ArticleProject extends Component {
 
   render() {
 
-
+  
     const { firstNumber,pageNumber, numPages,scale,thumbnailScale } = this.state;
     const classId = this.props.classId;
     const {title, group, groupName, members, description, pdf, likeCount, video, isClicked, isLike} = this.props.item;
 
     return (
-
+  
 
 
 
@@ -115,14 +115,24 @@ class ArticleProject extends Component {
                   <div className ="modal-PDF-area">
                     <Document
                         file={pdf}
-                        // file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
+                        // file="https://cors-anywhere.herokuapp.com/http://www.africau.edu/images/default/sample.pdf"
                     // file = {this.state.pdfObject}
                     // file = {myPDF}
                     // file = {{data: JSON.parse("http://www.africau.edu/images/default/sample.pdf").data}}
                     // file = {{ url: 'http://www.africau.edu/images/default/sample.pdf', httpHeaders: { 'X-CustomHeader': '40359820958024350238508234' }, withCredentials: true }}
 
                       onLoadSuccess={this.onDocumentLoadSuccess}>
-                      <Page scale = {scale} pageNumber={pageNumber} />
+
+                    
+                      {window.innerWidth < 768 &&
+                      <Page scale = {scale - 0.4} pageNumber={pageNumber} />
+                       }
+
+                       {window.innerWidth >= 768  &&
+                       <Page scale = {scale} pageNumber={pageNumber} />
+                       }
+
+
                     </Document>
 
                   </div>
@@ -284,6 +294,8 @@ class ArticleProject extends Component {
 }
 
 // modal style component (모달창 스타일 컴포넌트)
+
+
 const ModalWrapper = styled.div`
   ${customMedia.lessThan('mobile')`
     display: none;
