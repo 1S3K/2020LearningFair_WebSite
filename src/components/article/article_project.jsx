@@ -185,6 +185,7 @@ class ArticleProject extends Component {
       <Document onClick={this.openModal} 
                     // file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
                     file={pdf}
+                    // file = {myPDF}
                       onLoadSuccess={this.onDocumentLoadSuccess}>
                       <Page scale = {thumbnailScale} pageNumber={firstNumber} />
       </Document>
