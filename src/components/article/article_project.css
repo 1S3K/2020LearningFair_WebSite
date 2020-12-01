@@ -348,8 +348,8 @@ button {
 
   .thumbnail-area {
     margin: 0;
-    width: 100% !important;
-    height: 50%;
+    width: 80% !important;
+    height: 40%;
     border: 1px #154483 solid;
   }
   .thumbnail-area .react-pdf__Document {

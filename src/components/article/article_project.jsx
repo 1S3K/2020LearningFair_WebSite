@@ -109,10 +109,10 @@ class ArticleProject extends Component {
 
                   <div className ="modal-PDF-area">
                     <Document
-                    // file = {myPDF}
+                    file = {myPDF}
                     
 
-                        file={pdf}
+                        // file={pdf}
                         // file="https://cors-anywhere.herokuapp.com/http://www.africau.edu/images/default/sample.pdf"
                     // file = {this.state.pdfObject}
                     // file = {myPDF}
@@ -184,8 +184,8 @@ class ArticleProject extends Component {
 
       <Document onClick={this.openModal} 
                     // file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
-                    file={pdf}
-                    // file = {myPDF}
+                    // file={pdf}
+                    file = {myPDF}
                       onLoadSuccess={this.onDocumentLoadSuccess}>
                       <Page scale = {thumbnailScale} pageNumber={firstNumber} />
       </Document>
