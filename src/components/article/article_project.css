@@ -298,7 +298,17 @@ button {
 }
 
 @media screen and (max-width: 768px) {
+
+
   /* PDF 부분 */
+
+
+
+  .react-pdf__Page__canvas
+  {
+    height : 100% !important;
+  }
+
 
   .modal-Root-Screen {
     /* width: 80vw;
