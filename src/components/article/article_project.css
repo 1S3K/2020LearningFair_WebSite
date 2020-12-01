@@ -105,7 +105,7 @@ button {
   .thumbnail-area {
     margin: 0;
     width: 100% !important;
-    height: 40%;
+    height: 45%;
   }
   .thumbnail-area .react-pdf__Document {
     margin: 0;
@@ -299,10 +299,7 @@ button {
 
 @media screen and (max-width: 768px) {
   /* PDF 부분 */
-  .ReactModal__Content--after-open
-  {
-    width : 100% !important;
-  }
+
   .modal-Root-Screen {
     /* width: 80vw;
     height: 60vw; */
@@ -348,7 +345,7 @@ button {
 
   .thumbnail-area {
     margin: 0;
-    width: 80% !important;
+    width: 100% !important;
     height: 40%;
     border: 1px #154483 solid;
   }
