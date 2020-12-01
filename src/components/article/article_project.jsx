@@ -109,10 +109,10 @@ class ArticleProject extends Component {
 
                   <div className ="modal-PDF-area">
                     <Document
-                    file = {myPDF}
+                    // file = {myPDF}
                     
 
-                        // file={pdf}
+                        file={pdf}
                         // file="https://cors-anywhere.herokuapp.com/http://www.africau.edu/images/default/sample.pdf"
                     // file = {this.state.pdfObject}
                     // file = {myPDF}
