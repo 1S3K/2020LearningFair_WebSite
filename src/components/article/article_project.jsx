@@ -4,7 +4,7 @@ import { BiPlusCircle,BiMinusCircle,BiSkipNextCircle,BiSkipPreviousCircle } from
 import { generateMedia } from 'styled-media-query';
 
 
-
+import myPDF from './../../sample-pdf2.pdf';
 import ReactPlayer from 'react-player';
 import Modal from 'react-modal';
 import styled from 'styled-components';
@@ -109,6 +109,8 @@ class ArticleProject extends Component {
 
                   <div className ="modal-PDF-area">
                     <Document
+                    // file = {myPDF}
+                    
 
                         file={pdf}
                         // file="https://cors-anywhere.herokuapp.com/http://www.africau.edu/images/default/sample.pdf"
@@ -121,7 +123,7 @@ class ArticleProject extends Component {
 
              
                       {window.innerWidth >= 768  &&
-                       <Page scale = {scale} pageNumber={pageNumber} />
+                       <Page width = {800} height = {600} scale = {scale + 0.2} pageNumber={pageNumber} />
                        }       
 
                       {window.innerWidth < 768 &&

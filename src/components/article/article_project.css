@@ -298,18 +298,21 @@ button {
 
 @media screen and (max-width: 768px) {
   /* PDF 부분 */
-
+  .ReactModal__Content--after-open
+  {
+    width : 100% !important;
+  }
   .modal-Root-Screen {
-    width: 80vw;
-    height: 60vw;
+    /* width: 80vw;
+    height: 60vw; */
   }
 
   .modal-PDF-area {
     height: 90%;
     width: 100%;
     border: 1px black solid;
-    overflow-y: scroll;
-    overflow-x: scroll;
+    overflow-y: auto;
+    overflow-x: auto;
   }
 
   .modal-button-area {
