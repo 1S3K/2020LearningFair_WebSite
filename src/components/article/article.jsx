@@ -4,15 +4,13 @@ import styled from 'styled-components';
 import { generateMedia } from 'styled-media-query';
 import ArticleHeader from "./article_header";
 import ArticleProject from "./article_project";
-import  workerURL  from  "./pdf.worker.min.data" ;
 
 import "./article.css";
 import "./article_header.css";
 import "./article_project.css";
 
 import { pdfjs } from "react-pdf";
-// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-pdfjs.GlobalWorkerOptions.workerSrc = workerURL ;
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const customMedia = generateMedia({
   lgDesktop: '1350px',
