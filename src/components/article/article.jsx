@@ -129,7 +129,7 @@ class Article extends Component {
     let start = this.state.start;
     let end = this.state.end;
     let buttons = [];
-    for(let i=1;i<parseInt(howmany/9)+2;i++){
+    for(let i=1;i<parseInt((howmany-1)/9)+2;i++){
       buttons.push(<button onClick={()=>this.goSpecificPage(i)}>{i}</button>)
     }
     return (
@@ -137,8 +137,10 @@ class Article extends Component {
         <ArticleHeader dataCount={howmany} classId={classId} />
 
         <section className="project-area">
-          {this.state.data.slice(start, end).map((item, index) => (
-            <ArticleProject
+          {this.state.data.slice(start, end).map((item, index) => {
+            console.log(item, index);
+            return (
+              <ArticleProject
               key={item.id}
               item={item}
               onClick={this.handleClick}
@@ -147,7 +149,10 @@ class Article extends Component {
               classId={classId}
               index={index}
             />
-          ))}
+            )
+          }
+            
+          )}
         </section>
 
         <PageButtons className="page-buttons">
