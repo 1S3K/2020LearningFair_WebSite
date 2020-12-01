@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {BrowserRouter, Link, Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 import './components/header/header.css';
 
@@ -9,7 +9,6 @@ import Login from './components/login/login';
 import Main from './components/main/main';
 import Contents from './components/contents/contents';
 import Board from './components/board/board';
-import { toPlainObject } from 'lodash';
 
 class App extends Component {
   // state = {

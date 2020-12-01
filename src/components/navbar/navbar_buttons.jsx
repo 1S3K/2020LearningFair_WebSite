@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-
-import {Link, Route} from 'react-router-dom'
+import React, { Component } from 'react'
 
 class NavbarButtons extends Component {
   handleClick = () => {

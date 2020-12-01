@@ -126,7 +126,6 @@ class Article extends Component {
     const selectedPart = this.props.data.selectedPart;
     const classId = this.props.classId;
     const howmany = this.state.howmany;
-    let page = this.state.page;
     let start = this.state.start;
     let end = this.state.end;
     let buttons = [];

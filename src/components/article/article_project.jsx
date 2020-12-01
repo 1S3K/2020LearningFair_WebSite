@@ -1,22 +1,16 @@
-import React, { Component,useState,Fragment } from 'react';
+import React, { Component } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { BiPlusCircle,BiMinusCircle,BiSkipNextCircle,BiSkipPreviousCircle } from "react-icons/bi";
-import {IoIosCloseCircleOutline} from "react-icons/io"
 import { generateMedia } from 'styled-media-query';
-import throttle from "lodash.throttle";
 
 
 
 import ReactPlayer from 'react-player';
-import myPDF from './../../sample-pdf2.pdf';
 import Modal from 'react-modal';
 import styled from 'styled-components';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-const url =  "/sample.pdf"
-const pdfUrl = "http://www.africau.edu/images/default/sample.pdf"
-var array = new Uint8Array(pdfUrl);
 
 const customStyles = {
   content : {
@@ -93,9 +87,9 @@ class ArticleProject extends Component {
   render() {
 
   
-    const { firstNumber,pageNumber, numPages,scale,thumbnailScale ,mobile_scale} = this.state;
+    const { firstNumber,pageNumber, numPages,scale,thumbnailScale} = this.state;
     const classId = this.props.classId;
-    const {title, group, groupName, members, description, pdf, likeCount, video, isClicked, isLike} = this.props.item;
+    const {title, group, groupName, members, pdf, likeCount, video, isClicked, isLike} = this.props.item;
 
     return (
   
@@ -141,7 +135,7 @@ class ArticleProject extends Component {
 
                 <div className = "modal-button-area">
 
-                    <BiPlusCircle  color ="#174483" className ="modal-button" onClick={() => this.setState({scale : this.state.scale = this.state.scale + 0.05})}>
+                    <BiPlusCircle  color ="#174483" className ="modal-button" onClick={() => this.setState({scale : this.state.scale + 0.05})}>
 
                     </BiPlusCircle>
               

@@ -44,7 +44,7 @@ class Board extends Component {
                   💡 <strong>12월 4일(금)</strong><br/>
                   10:00 ~ 12:00 토크콘서트 <br/><span style={{fontSize: "0.8em"}}>(SW창업 A to Z, SW 전공자 취업 전략?)</span>  <br/>   13:30 ~ 15:30 명사 특강 <br/><span style={{fontSize: "0.8em"}}>(데이터의 힘, SW스타트업 스케일업 성공 전략)</span><br/>   15:30 ~ 16:00 우수작품 시상식 <br/><span style={{fontSize: "0.8em"}}>(SW중심대학, 혁신성장청년인재집중양성)</span><br/>
                 </p>
-                <p><br/>▶︎ SW인재페스티벌 바로가기: <a href="http://www.swhrfestival.kr/swhr/index.do" target="_blank">http://www.swhrfestival.kr/swhr/index.do</a></p>
+                <p><br/>▶︎ SW인재페스티벌 바로가기: <a href="http://www.swhrfestival.kr/swhr/index.do" target="_blank" rel='noopener noreferrer'>http://www.swhrfestival.kr/swhr/index.do</a></p>
               </p>
             </div>
           </section>
