@@ -8,8 +8,7 @@ button {
 @media screen and (min-width: 769px) {
   /* PDF 부분 */
   .modal-Root-Screen {
-    width: 40vw;
-    height: 27vw;
+  
   }
 
   .modal-PDF-area {
