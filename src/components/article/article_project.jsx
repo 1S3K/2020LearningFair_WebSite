@@ -183,7 +183,7 @@ class ArticleProject extends Component {
 
       <Document onClick={this.openModal} 
                     // file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
-                    // file ={"https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/pdf/03/p14.pdf"}
+                    // file ={"https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/pdf/03/p16.pdf"}
 
                     file={pdf}
                     // file = {myPDF}
