@@ -9,7 +9,7 @@ import ReactPlayer from 'react-player';
 import Modal from 'react-modal';
 import styled from 'styled-components';
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 
 const customStyles = {
@@ -109,10 +109,11 @@ class ArticleProject extends Component {
 
                   <div className ="modal-PDF-area">
                     <Document
-                        file={pdf}
+
+                        // file={pdf}
                         // file="https://cors-anywhere.herokuapp.com/http://www.africau.edu/images/default/sample.pdf"
                     // file = {this.state.pdfObject}
-                    // file = {myPDF}
+                    file = {myPDF}
                     // file = {{data: JSON.parse("http://www.africau.edu/images/default/sample.pdf").data}}
                     // file = {{ url: 'http://www.africau.edu/images/default/sample.pdf', httpHeaders: { 'X-CustomHeader': '40359820958024350238508234' }, withCredentials: true }}
 
