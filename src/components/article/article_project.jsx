@@ -4,6 +4,7 @@ import { BiPlusCircle,BiMinusCircle,BiSkipNextCircle,BiSkipPreviousCircle } from
 import {IoIosCloseCircleOutline} from "react-icons/io"
 import { generateMedia } from 'styled-media-query';
 import throttle from "lodash.throttle";
+import  workerURL  from  "./pdf.worker.min.data" ;
 
 
 
@@ -12,7 +13,9 @@ import myPDF from './../../sample-pdf2.pdf';
 import Modal from 'react-modal';
 import styled from 'styled-components';
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = workerURL ;
 
 const url =  "/sample.pdf"
 const pdfUrl = "http://www.africau.edu/images/default/sample.pdf"
@@ -274,7 +277,6 @@ class ArticleProject extends Component {
         <ModalInner tabIndex="0" className="modal-inner">
         <div className="modal-header">
           <div className="modal-title">{title}</div>
-          {/* <button className="close-btn" onClick={this.handleClick}><IoIosCloseCircleOutline size="36" color="#154483"/></button> */}
         </div>
         
         <ReactPlayer 
