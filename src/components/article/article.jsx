@@ -12,7 +12,7 @@ import "./article_project.css";
 
 import { pdfjs } from "react-pdf";
 // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-pdfjsLib.GlobalWorkerOptions.workerSrc = workerURL ;
+pdfjs.GlobalWorkerOptions.workerSrc = workerURL ;
 
 const customMedia = generateMedia({
   lgDesktop: '1350px',
