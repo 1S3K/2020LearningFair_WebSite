@@ -48,7 +48,8 @@ class ArticleProject extends Component {
     pageNumber: 1,
     firstNumber : 1,
 
-    scale : 0.75,
+    scale : 0.55,
+    mobile_scale : 0.3,
     thumbnailScale : 0.4,
 
     videoModalIsOpen:false
@@ -92,7 +93,7 @@ class ArticleProject extends Component {
   render() {
 
   
-    const { firstNumber,pageNumber, numPages,scale,thumbnailScale } = this.state;
+    const { firstNumber,pageNumber, numPages,scale,thumbnailScale ,mobile_scale} = this.state;
     const classId = this.props.classId;
     const {title, group, groupName, members, description, pdf, likeCount, video, isClicked, isLike} = this.props.item;
 
@@ -114,23 +115,24 @@ class ArticleProject extends Component {
 
                   <div className ="modal-PDF-area">
                     <Document
-                        file={pdf}
+                        // file={pdf}
                         // file="https://cors-anywhere.herokuapp.com/http://www.africau.edu/images/default/sample.pdf"
                     // file = {this.state.pdfObject}
-                    // file = {myPDF}
+                    file = {myPDF}
                     // file = {{data: JSON.parse("http://www.africau.edu/images/default/sample.pdf").data}}
                     // file = {{ url: 'http://www.africau.edu/images/default/sample.pdf', httpHeaders: { 'X-CustomHeader': '40359820958024350238508234' }, withCredentials: true }}
 
                       onLoadSuccess={this.onDocumentLoadSuccess}>
 
-                    
+             
+                      {window.innerWidth >= 768  &&
+                       <Page scale = {scale} pageNumber={pageNumber} />
+                       }       
+
                       {window.innerWidth < 768 &&
-                      <Page scale = {scale - 0.4} pageNumber={pageNumber} />
+                      <Page scale = {scale - 0.2} pageNumber={pageNumber} />
                        }
 
-                       {window.innerWidth >= 768  &&
-                       <Page scale = {scale} pageNumber={pageNumber} />
-                       }
 
 
                     </Document>
