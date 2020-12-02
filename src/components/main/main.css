@@ -15,6 +15,7 @@
 
 .contents .main_banner_area .main_banner_img {
   margin: 5vh auto;
+  margin-bottom: 0;
 }
 
 .contents .video_area_wrapper {

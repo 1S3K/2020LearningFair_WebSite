@@ -23,6 +23,17 @@
   /* width: 80vw; */
   height: 25vh;
 }
+
+#section .chrome_banner {
+  margin: 1vh auto;
+  margin-top : 0.05vh;
+  
+}
+
+#section .chrome_banner_img {
+  /* width: 80vw; */
+  height: 10vh;
+}
 /* // main banner */
 
 /* login form - input button */
