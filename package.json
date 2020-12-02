@@ -22,7 +22,7 @@
     "react-player": "^2.7.0",
     "react-portal-overlay": "^1.0.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.2.0",
     "regenerator-runtime": "^0.13.7",
     "styled-components": "^5.2.1",
     "styled-media-query": "^2.1.2"
