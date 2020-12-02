@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import 'react-app-polyfill/ie9';
+import 'react-app-polyfill/ie11';
+
 
 import {BrowserRouter, Route} from 'react-router-dom';
 
