@@ -31,7 +31,7 @@ class Main extends Component {
 
               {/* main banner */}
               <div className="main_banner_area">
-                <img src="/images/main-banner.png" alt="성균SW교육원" className="main_banner_img"/>
+                <img src="/images/welcome-banner.png" alt="성균SW교육원" className="main_banner_img"/>
               </div>
               {/* // main banner */}
 
