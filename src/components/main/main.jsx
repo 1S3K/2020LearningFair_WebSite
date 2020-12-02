@@ -53,7 +53,7 @@ class Main extends Component {
                       className="react-player" 
                       width="100%"
                       height="100%"
-                      light='/images/dr-thumbnail.png'
+                      light='/images/jh-thumbnail.png'
                       url='/videos/main_video_01.mp4'
                       playing 
                       controls

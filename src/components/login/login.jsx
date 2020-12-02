@@ -101,7 +101,7 @@ class Login extends Component {
                 <input type="text" id="example" name="comment" value={this.state.comment} onChange={this.changeHandler} required/>
                 <label htmlFor="example" data-label="방명록"></label>
               </div>
-              <p> 방명록을 기재해주세요. </p>
+              <p> 응원의 메시지를 적어주세요 </p>
             </div>
           </div>
           {/* // login area */}
@@ -110,7 +110,7 @@ class Login extends Component {
 
             <button type="submit" >
               {/* <Link to='/main' style={{color: 'white', all: 'unset'}}> */}
-                이동하기
+                입장
               {/* </Link> */}
             </button>
           </div>
