@@ -130,7 +130,7 @@ class Article extends Component {
     let end = this.state.end;
     let buttons = [];
     for(let i=1;i<parseInt((howmany-1)/9)+2;i++){
-      buttons.push(<button onClick={()=>this.goSpecificPage(i)}>{i}</button>)
+      buttons.push(<button className="pageNumber" onClick={()=>this.goSpecificPage(i)}>{i}</button>)
     }
     return (
       <section className="article">
