@@ -130,7 +130,7 @@ class Article extends Component {
     let end = this.state.end;
     let buttons = [];
     for(let i=1;i<parseInt((howmany-1)/9)+2;i++){
-      buttons.push(<button className="pageNumber" onClick={()=>this.goSpecificPage(i)}>{i}</button>)
+      buttons.push(<button id={this.state.page} className="pageNumber" onClick={()=>this.goSpecificPage(i)}>{i}</button>)
     }
     return (
       <section className="article">
@@ -155,7 +155,7 @@ class Article extends Component {
           )}
         </section>
 
-        <PageButtons className="page-buttons">
+        <PageButtons className="page-buttons" page={this.state.page}>
           <button onClick={this.goPrevPage}>◀︎ 이전</button>
           {buttons}
           <button onClick={this.goNextPage}>다음 ▶︎</button>
@@ -170,10 +170,12 @@ class Article extends Component {
 const PageButtons = styled.div`
   display: flex;
   justify-content: space-around;
-  
-
   margin: 50px auto 0;
-
+  & > button:nth-child(${props => props.page + 1}) {
+    font-weight: bold;
+    color: white;
+    background-color: #154483;
+  }
   width: 310px;
   // ${customMedia.lessThan('tablet')`
   //   display: ${(props) => (props.visible ? 'block' : 'none')};
