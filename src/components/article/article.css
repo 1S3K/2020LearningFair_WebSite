@@ -1,3 +1,57 @@
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+
+  section .article {
+    /* size */
+    width: 100vw;
+    height: 100%;
+
+    margin-bottom: 339.5px;
+
+    
+  }
+
+
+
+
+section .article {
+  /* size */
+  width: 84.5332vw;
+  height: 100%;
+
+  /* margin/padding */
+  margin-bottom: 339.5px;
+}
+
+/* .page-buttons {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.page-buttons button {
+  text-align: center;
+  padding: 5px;
+  min-width: 18px;
+  min-height: 18px;
+  /* border: 1px solid #707070; */
+}
+
+.page-buttons button:hover {
+  font-weight: bold;
+  color: white;
+  background-color: #154483;
+}
+
+.pageNumber:focus {
+  font-weight: bold;
+  color: white;
+  background-color: #154483;
+}
+
+}
+
+
 section .article {
   /* size */
   width: 84.5332vw;
