@@ -26,6 +26,12 @@ section .article {
   background-color: #154483;
 }
 
+.pageNumber:focus {
+  font-weight: bold;
+  color: white;
+  background-color: #154483;
+}
+
 @media screen and (max-width: 768px) {
   section .article {
     /* size */
