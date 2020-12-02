@@ -60,6 +60,9 @@ class Login extends Component {
           <div className="main_banner_area">
             <img className="main_banner_img" src="/images/main-banner.png" alt="성균SW교육원"/>
           </div>
+          <div className="chrome_banner">
+           <img className="chrome_banner_img" src="/images/chorme-banner.png" alt="성균SW교육원"/>
+          </div>
 
           {/* login area */}
           <div className="login_area">
@@ -99,9 +102,9 @@ class Login extends Component {
               <div className="form-item">
 
                 <input type="text" id="example" name="comment" value={this.state.comment} onChange={this.changeHandler} required/>
-                <label htmlFor="example" data-label="방명록"></label>
+                <label htmlFor="example" data-label="응원의 말"></label>
               </div>
-              <p> 방명록을 기재해주세요. </p>
+              <p> 응원의 한마디를 남겨주세요!</p>
             </div>
           </div>
           {/* // login area */}
@@ -110,7 +113,7 @@ class Login extends Component {
 
             <button type="submit" >
               {/* <Link to='/main' style={{color: 'white', all: 'unset'}}> */}
-                이동하기
+                입장
               {/* </Link> */}
             </button>
           </div>
