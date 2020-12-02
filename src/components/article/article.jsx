@@ -61,7 +61,7 @@ class Article extends Component {
   loadingData = async () => {
     try {
       const classId = this.props.classId;
-      const url = "/api/lectures/" + classId.id + "/projects";
+      const url = "http://3.35.126.154:8000/lectures/" + classId.id + "/projects";
       const response = await axios.get(url, { validateStatus: false });
 
       console.log(response);
@@ -103,7 +103,7 @@ class Article extends Component {
       groupNum + 1 < 10 && groupNum + 1 >= 0
         ? "0" + (groupNum + 1)
         : groupNum + 1;
-    const url = "/api/lectures/" + classId.id + "/groups/" + groupId + "/like";
+    const url = "http://3.35.126.154:8000/lectures/" + classId.id + "/groups/" + groupId + "/like";
     const data = [...this.state.data];
     const index = data.indexOf(item);
 
