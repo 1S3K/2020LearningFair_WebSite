@@ -64,7 +64,7 @@ class Article extends Component {
       const url = "/api/lectures/" + classId.id + "/projects";
       const response = await axios.get(url, { validateStatus: false });
 
-      console.log(response);
+      // console.log(response);
 
       const fetchData = response.data.data;
 
@@ -100,9 +100,9 @@ class Article extends Component {
   handleLike = (item, groupNum) => {
     const classId = this.props.classId;
     const groupId =
-      groupNum + 1 < 10 && groupNum + 1 >= 0
-        ? "0" + (groupNum + 1)
-        : groupNum + 1;
+      Number(groupNum)< 10 && Number(groupNum)>= 0
+        ? "0" + (Number(groupNum))
+        : Number(groupNum);
     const url = "/api/lectures/" + classId.id + "/groups/" + groupId + "/like";
     const data = [...this.state.data];
     const index = data.indexOf(item);
@@ -138,7 +138,7 @@ class Article extends Component {
 
         <section className="project-area">
           {this.state.data.slice(start, end).map((item, index) => {
-            console.log(item, index);
+            // console.log(item, index);
             return (
               <ArticleProject
               key={item.id}

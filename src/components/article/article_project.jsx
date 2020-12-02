@@ -79,7 +79,7 @@ class ArticleProject extends Component {
   }
 
   handleLike = () => {
-    this.props.onLike(this.props.item, this.props.index);
+    this.props.onLike(this.props.item, this.props.item.group);
   }
 
 
