@@ -1,20 +1,15 @@
-import React, { Component,useState,Fragment } from 'react';
+import React, { Component } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { BiPlusCircle,BiMinusCircle,BiSkipNextCircle,BiSkipPreviousCircle } from "react-icons/bi";
-import {IoIosCloseCircleOutline} from "react-icons/io"
 import { generateMedia } from 'styled-media-query';
-import throttle from "lodash.throttle";
 
-import ReactPlayer from 'react-player';
 import myPDF from './../../sample-pdf2.pdf';
+import ReactPlayer from 'react-player';
 import Modal from 'react-modal';
 import styled from 'styled-components';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-const url =  "/sample.pdf"
-const pdfUrl = "http://www.africau.edu/images/default/sample.pdf"
-var array = new Uint8Array(pdfUrl);
 
 const customStyles = {
   content : {
@@ -48,7 +43,7 @@ class ArticleProject extends Component {
 
     scale : 0.55,
     mobile_scale : 0.3,
-    thumbnailScale : 0.4,
+    thumbnailScale : 1,
 
     videoModalIsOpen:false
   }
@@ -91,9 +86,9 @@ class ArticleProject extends Component {
   render() {
     console.log(pdfjs.version);
   
-    const { firstNumber,pageNumber, numPages,scale,thumbnailScale ,mobile_scale} = this.state;
+    const { firstNumber,pageNumber, numPages,scale,thumbnailScale} = this.state;
     const classId = this.props.classId;
-    const {title, group, groupName, members, description, pdf, likeCount, video, isClicked, isLike} = this.props.item;
+    const {title, group, groupName, members, pdf, likeCount, video, isClicked, isLike} = this.props.item;
 
     return (
   
@@ -113,6 +108,8 @@ class ArticleProject extends Component {
 
                   <div className ="modal-PDF-area">
                     <Document
+                    // file = {myPDF}
+                    
                         file={pdf}
                         // file="https://cors-anywhere.herokuapp.com/http://www.africau.edu/images/default/sample.pdf"
                     // file = {this.state.pdfObject}
@@ -124,11 +121,11 @@ class ArticleProject extends Component {
 
              
                       {window.innerWidth >= 768  &&
-                       <Page scale = {scale} pageNumber={pageNumber} />
+                       <Page object-fit = "fill" height = {500} scale = {scale + 0.2} pageNumber={pageNumber} />
                        }       
 
                       {window.innerWidth < 768 &&
-                      <Page scale = {scale - 0.2} pageNumber={pageNumber} />
+                      <Page width = {760} scale = {scale - 0.15} pageNumber={pageNumber} />
                        }
 
 
@@ -139,7 +136,7 @@ class ArticleProject extends Component {
 
                 <div className = "modal-button-area">
 
-                    <BiPlusCircle  color ="#174483" className ="modal-button" onClick={() => this.setState({scale : this.state.scale = this.state.scale + 0.05})}>
+                    <BiPlusCircle  color ="#174483" className ="modal-button" onClick={() => this.setState({scale : this.state.scale + 0.05})}>
 
                     </BiPlusCircle>
               
@@ -185,9 +182,12 @@ class ArticleProject extends Component {
 
       <Document onClick={this.openModal} 
                     // file="https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/proto.pdf"
+                    // file ={"https://cors-anywhere.herokuapp.com/https://2020learningfair.s3.ap-northeast-2.amazonaws.com/static/pdf/03/p16.pdf"}
+
                     file={pdf}
+                    // file = {myPDF}
                       onLoadSuccess={this.onDocumentLoadSuccess}>
-                      <Page scale = {thumbnailScale} pageNumber={firstNumber} />
+                      <Page renderMode = {"canvas"} scale = {thumbnailScale} pageNumber={firstNumber} />
       </Document>
       </div>
 

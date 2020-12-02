@@ -8,19 +8,18 @@ button {
 @media screen and (min-width: 769px) {
   /* PDF 부분 */
   .modal-Root-Screen {
-    width: 40vw;
-    height: 27vw;
+  
   }
 
   .modal-PDF-area {
     height: 85%;
-    width: 100%;
+    /* width: 100%; */
     border: 1px black solid;
     overflow-y: scroll;
     overflow-x: scroll;
 
-    overflow-x: auto;
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
   .modal-PDF-area::-webkit-scrollbar {
   }
@@ -106,7 +105,7 @@ button {
   .thumbnail-area {
     margin: 0;
     width: 100% !important;
-    height: 50%;
+    height: 45%;
   }
   .thumbnail-area .react-pdf__Document {
     margin: 0;
@@ -128,6 +127,7 @@ button {
   }
   .thumbnail-area .react-pdf__Document .react-pdf__Page__canvas {
     width: 100% !important;
+    height : 100%;
   }
 
   article .article-container .project-info {
@@ -298,19 +298,32 @@ button {
 }
 
 @media screen and (max-width: 768px) {
+
+
   /* PDF 부분 */
 
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    }
+
+  .react-pdf__Page__canvas
+  {
+    height : 100% !important;
+  }
+
+
   .modal-Root-Screen {
-    width: 80vw;
-    height: 60vw;
+    /* width: 80vw;
+    height: 60vw; */
   }
 
   .modal-PDF-area {
     height: 90%;
     width: 100%;
     border: 1px black solid;
-    overflow-y: scroll;
-    overflow-x: scroll;
+    overflow-y: auto;
+    overflow-x: auto;
   }
 
   .modal-button-area {
@@ -346,7 +359,7 @@ button {
   .thumbnail-area {
     margin: 0;
     width: 100% !important;
-    height: 50%;
+    height: 40%;
     border: 1px #154483 solid;
   }
   .thumbnail-area .react-pdf__Document {
@@ -376,7 +389,9 @@ button {
   /* 프로젝트 정보 내용 */
   article .article-container .project-info .project-contents {
     text-align: center;
+
     margin: 5px 0;
+  
     font-size: 15px;
   }
 

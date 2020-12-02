@@ -41,7 +41,7 @@ class Navbar extends Component {
 
     this.setState({campi});
 
-    if(campus.id == 3)
+    if(campus.id === 3)
     {
       this.props.propsInfo.history.push('/board');
     }
