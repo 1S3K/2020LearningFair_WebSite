@@ -27,7 +27,7 @@ class Navbar extends Component {
       ],classNum: [
         '41', '42', '43', '44'
       ]},
-      {id: 3, name: 'SW인재페스티벌', isClicked: false, isShow: false, parts: [],classNum: []},
+      // {id: 3, name: 'SW인재페스티벌', isClicked: false, isShow: false, parts: [],classNum: []},
     ],
   };
 
