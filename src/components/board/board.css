@@ -11,8 +11,16 @@
 }
 
 .board-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding-top: 60px;
+}
+
+.board-contents img {
+  width: 50%;
+  height: 100%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -28,18 +36,10 @@
     text-align: center;
     margin: 0 auto;
   }
-  .board-info {
-    padding: 0;
-  }
 
-  .board-img-container {
-    /* width: 600px; */
-    width: 70vw;
-  }
-
-  .board-img-container img {
+  .board-contents img {
     width: 100%;
-    height: 70%;
+    height: 100%;
   }
 }
 

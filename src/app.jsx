@@ -30,9 +30,9 @@ class App extends Component {
         
           {/* <Route exact path='/' component={Login} /> */}
 
-          <Route exact path='/' component={Main} />
+          <Route exact path='/' component={Board} />
     
-          <Route path='/contents/:id' exact component={Contents} />
+          {/* <Route path='/contents/:id' exact component={Contents} /> */}
 
           <Route path='/board' exact component={Board} />
 
